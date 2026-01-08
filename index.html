@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adrian Marcano - Full-Stack Developer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Adrian Marcano</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Adrian Marcano</h1>
+            <p class="hero-subtitle">Full-Stack Developer & Data Engineer</p>
+            <p class="hero-description">Building innovative applications with cutting-edge technologies. Specializing in Flutter mobile development, Python data analytics, machine learning, and modern web technologies. Passionate about creating production-ready solutions that solve real-world problems.</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="https://github.com/amarcano27" class="btn btn-secondary" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/adrian-marcano-16a566189/" class="btn btn-secondary" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="featured-project">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Featured Projects</span>
+                <h2>My Work</h2>
+                <p class="section-description">
+                    A collection of production-ready applications I've built, showcasing my expertise in full-stack development, mobile app creation, data analytics, and AI automation. Each project demonstrates real-world problem-solving and attention to detail.
+                </p>
+            </div>
+        </div>
+
+        <!-- ColorSpark Project -->
+        <div class="container" style="margin-bottom: 100px;">
+            <div class="project-showcase">
+                <div class="project-image">
+                    <img src="colorspark_images/Screenshot 2026-01-06 110841.png" alt="ColorSpark - Category Selection Screen" style="border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
+                </div>
+
+                <div class="project-details">
+                    <div class="section-tag" style="display: inline-block; margin-bottom: 1rem;">Mobile App</div>
+                    <h2 style="font-size: 2.5rem; margin-bottom: 1rem; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">ColorSpark</h2>
+                    <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.8;">
+                        A mobile coloring app built with Flutter/Dart that combines creativity and early learning for kids. 
+                        Features AI-generated coloring pages, interactive sticker tools, and a freemium subscription model. 
+                        Led development from concept to beta testing.
+                    </p>
+
+                    <div class="project-badges">
+                        <span class="badge badge-python">Flutter</span>
+                        <span class="badge badge-streamlit">Dart</span>
+                        <span class="badge badge-ml">Mobile</span>
+                        <span class="badge badge-api">Web</span>
+                        <span class="badge badge-postgres">Animation</span>
+                    </div>
+
+                    <h3>Key Features</h3>
+                    <ul class="feature-list">
+                        <li>AI-generated coloring pages for creative engagement</li>
+                        <li>Interactive sticker functionality (drag, resize, rotate)</li>
+                        <li>Custom category interface with animated space background</li>
+                        <li>Smooth horizontal scroll UX with dynamic category box sizing</li>
+                        <li>Freemium paywall system with VIP subscription logic</li>
+                        <li>Manual QA testing on emulators, physical devices, and web</li>
+                        <li>Responsive UI across web + mobile platforms</li>
+                    </ul>
+
+                    <h3>Technical Stack</h3>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <strong>Framework & Language:</strong> Flutter (Dart)
+                        </div>
+                        <div class="tech-item">
+                            <strong>Development Tools:</strong> Git, VSCode, Git Bash
+                        </div>
+                        <div class="tech-item">
+                            <strong>Testing:</strong> Android Emulator, Web testing, Physical devices
+                        </div>
+                        <div class="tech-item">
+                            <strong>External Services:</strong> AI Image Generation tools
+                        </div>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="colorspark.html" class="btn btn-primary">
+                            🎨 View Full Project
+                        </a>
+                        <a href="https://github.com/amarcano27/ColorSpark" class="btn btn-secondary" target="_blank">
+                            📁 GitHub Repository
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sports Betting Platform -->
+        <div class="container" style="margin-bottom: 100px;">
+            <div class="project-showcase">
+                <div class="project-image" style="position: relative;">
+                    <img src="sports_betting_images/marketplace.png" alt="Sports Betting Analytics - Marketplace Dashboard" style="border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); width: 100%; height: auto; display: block;">
+                </div>
+                
+                <div class="project-details">
+                    <div class="section-tag" style="display: inline-block; margin-bottom: 1rem;">Data Analytics</div>
+                    <h2 style="font-size: 2.5rem; margin-bottom: 1rem; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Sports Betting Analytics Platform</h2>
+                    <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.8;">
+                        A production-ready, full-stack analytics platform that aggregates real-time odds from 20+ sportsbooks, 
+                        calculates expected value using ML models, and provides AI-powered betting insights. Features comprehensive 
+                        error handling, fallback systems, and a premium UI/UX.
+                    </p>
+
+                    <div class="project-badges">
+                        <span class="badge badge-python">Python</span>
+                        <span class="badge badge-streamlit">Streamlit</span>
+                        <span class="badge badge-ml">Machine Learning</span>
+                        <span class="badge badge-api">API Integration</span>
+                        <span class="badge badge-postgres">PostgreSQL</span>
+                    </div>
+
+                    <h3>Key Features</h3>
+                    <ul class="feature-list">
+                        <li>Real-time odds aggregation from 20+ sportsbooks</li>
+                        <li>ML-powered player performance projections</li>
+                        <li>Expected Value (EV) analysis and edge detection</li>
+                        <li>Context-aware AI insights (injuries, rest days, matchups)</li>
+                        <li>Multi-sport support (NBA, NFL, MLB, NHL, Esports)</li>
+                        <li>Premium UI/UX with animations and responsive design</li>
+                        <li>Production-ready with error handling and fallback systems</li>
+                    </ul>
+
+                    <h3>Technical Stack</h3>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <strong>Backend:</strong> Python 3.11, Streamlit, Supabase (PostgreSQL)
+                        </div>
+                        <div class="tech-item">
+                            <strong>APIs:</strong> The Odds API, NBA Stats API, PandaScore API
+                        </div>
+                        <div class="tech-item">
+                            <strong>ML/Analytics:</strong> Scikit-learn, Pandas, NumPy, Custom Models
+                        </div>
+                        <div class="tech-item">
+                            <strong>Frontend:</strong> Custom CSS/HTML, Plotly, Responsive Design
+                        </div>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://github.com/amarcano27/sports-betting-dashboard" class="btn btn-primary" target="_blank">
+                            📁 GitHub Repository
+                        </a>
+                    </div>
+
+                    <div class="project-note">
+                        <strong>💡 Note:</strong> The live demo runs in demo mode without API keys. 
+                        For production use, configure API keys as documented in the repository.
+                    </div>
+                    
+                    <div style="margin-top: 2.5rem;">
+                        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Additional Screenshots</h3>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                            <div style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); box-shadow: var(--shadow-md); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-md)'" onclick="window.open(this.querySelector('img').src, '_blank')">
+                                <img src="sports_betting_images/marketplace.png" alt="Marketplace Dashboard - Real-time odds and player props" style="width: 100%; height: auto; display: block;">
+                                <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); padding: 1rem; color: white; font-size: 0.9rem; font-weight: 600;">Marketplace Dashboard</div>
+                            </div>
+                            <div style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); box-shadow: var(--shadow-md); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-md)'" onclick="window.open(this.querySelector('img').src, '_blank')">
+                                <img src="sports_betting_images/player_insights.png" alt="Data Analytics - Player insights and statistics" style="width: 100%; height: auto; display: block;">
+                                <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); padding: 1rem; color: white; font-size: 0.9rem; font-weight: 600;">Data Analytics</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Firehouse Subs Catering Prep Assistant GPT -->
+        <div class="container" style="margin-bottom: 100px;">
+            <div class="project-showcase">
+                <div class="project-image" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; min-height: 400px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
+                    <div style="text-align: center; padding: 2rem; color: white;">
+                        <div style="font-size: 4rem; margin-bottom: 1rem;">🤖</div>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: white;">Custom GPT</h3>
+                        <p style="font-size: 1rem; opacity: 0.9;">Operations Automation Tool</p>
+                    </div>
+                </div>
+
+                <div class="project-details">
+                    <div class="section-tag" style="display: inline-block; margin-bottom: 1rem;">AI Automation</div>
+                    <h2 style="font-size: 2.5rem; margin-bottom: 1rem; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Firehouse Subs Catering Prep Assistant</h2>
+                    <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.8;">
+                        A custom-built AI tool designed and deployed for my restaurant business to streamline catering order preparation. 
+                        This operations automation tool converts ezCater PDF tickets into clear, execution-ready prep instructions that 
+                        follow Firehouse Subs Food Service Standards, eliminating manual calculations and preventing costly inventory mistakes.
+                    </p>
+                    <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.8; font-style: italic;">
+                        <strong>Business Impact:</strong> This tool was actively used in my restaurant operations to improve accuracy, 
+                        reduce prep time, and ensure consistent execution of high-volume catering orders.
+                    </p>
+
+                    <div class="project-badges">
+                        <span class="badge badge-python">Custom GPT</span>
+                        <span class="badge badge-ml">AI Automation</span>
+                        <span class="badge badge-api">Operations</span>
+                        <span class="badge badge-postgres">Business Rules</span>
+                        <span class="badge badge-streamlit">Process Design</span>
+                    </div>
+
+                    <h3>The Problem</h3>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">
+                        Catering orders often arrive as inconsistent PDFs that require managers to manually calculate meat, bread, cheese, 
+                        and produce usage, interpret box lunch types (Lieutenant vs Rookie), avoid costly assumptions under time pressure, 
+                        and translate order details into actionable prep steps. This process is error-prone, time-consuming, and difficult to audit.
+                    </p>
+
+                    <h3>The Solution</h3>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">
+                        I designed a rules-enforced AI assistant that parses ezCater PDFs, applies Firehouse Subs catering build standards, 
+                        calculates exact food usage by item and source, converts calculations into clear prep actions, generates full-case-only 
+                        replenishment guidance, and stops to flag missing or ambiguous data instead of guessing. The output is written for a 
+                        rushed Manager on Duty, not for engineers.
+                    </p>
+
+                    <h3>Key Capabilities</h3>
+                    <ul class="feature-list">
+                        <li>PDF-based order intake (ezCater tickets)</li>
+                        <li>Accurate handling of Lieutenant vs Rookie box lunches</li>
+                        <li>Protein usage broken out by box lunches, combos, and platters</li>
+                        <li>Prep bag logic (4 lb / 2 lb standards) with overage visibility</li>
+                        <li>Bread validation by SKU (white, wheat, gluten-free)</li>
+                        <li>Cheese slice-to-pack conversion</li>
+                        <li>Beverage yield handling (tea, lemonade)</li>
+                        <li>Guardrails to prevent silent assumptions</li>
+                    </ul>
+
+                    <h3>What Makes It Different</h3>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">
+                        Unlike generic AI tools, this GPT uses strict operational rules instead of approximations, refuses to proceed when 
+                        required information is missing, prioritizes execution clarity over technical explanations, mirrors how experienced 
+                        GMs actually prep catering orders, and is auditable and repeatable across orders. This is a practical operations 
+                        tool, not a theoretical AI demo.
+                    </p>
+
+                    <h3>Example Output</h3>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">
+                        Given an ezCater PDF, the assistant produces a clear order summary, a "What to Prep" section (bags, rolls, packs), 
+                        a "What to Pull / Order" section (full cases only), and a final MOD checklist ready for execution.
+                    </p>
+
+                    <h3>Skills Demonstrated</h3>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <strong>Operational Systems Thinking:</strong> Translating real-world business processes into AI workflows
+                        </div>
+                        <div class="tech-item">
+                            <strong>Business Rules Translation:</strong> Converting operational standards into AI logic
+                        </div>
+                        <div class="tech-item">
+                            <strong>AI Prompt & Guardrail Design:</strong> Creating reliable, rule-enforced AI behavior
+                        </div>
+                        <div class="tech-item">
+                            <strong>Supply Chain & Inventory Reasoning:</strong> Accurate calculations for food service operations
+                        </div>
+                        <div class="tech-item">
+                            <strong>User-Centered Output Design:</strong> Creating actionable outputs for operational staff
+                        </div>
+                        <div class="tech-item">
+                            <strong>Process Automation:</strong> Automating error-prone manual processes in real-world environments
+                        </div>
+                    </div>
+
+                    <div class="project-links" style="margin-top: 2rem;">
+                        <a href="https://chatgpt.com/g/g-695f354abcdc8191b805e1fe8d43a9d7-catering-prep-gpt" class="btn btn-primary" target="_blank">
+                            🤖 Try the GPT
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Highlights -->
+    <section class="project-highlights">
+        <div class="container">
+            <h2 class="section-title">What Makes These Projects Stand Out</h2>
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <div class="highlight-icon">🎨</div>
+                    <h3>Premium UI/UX Design</h3>
+                    <p>Custom-designed interfaces with smooth animations, glass morphism effects, and responsive layouts that work seamlessly across all devices and platforms.</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">🔌</div>
+                    <h3>API Integration</h3>
+                    <p>Seamlessly integrates with multiple real-time APIs with comprehensive error handling, retry logic, and intelligent fallback systems for reliability.</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">🤖</div>
+                    <h3>Machine Learning</h3>
+                    <p>Custom ML models for predictions, statistical analysis, and context-aware insights that adapt to real-world scenarios and user behavior.</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">⚡</div>
+                    <h3>Real-Time Processing</h3>
+                    <p>ETL pipelines with scheduled workers, data validation, caching strategies, and live updates ensuring data freshness and performance.</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">🛡️</div>
+                    <h3>Production Ready</h3>
+                    <p>Comprehensive error handling, demo mode fallbacks, data archiving, and production best practices throughout the entire codebase.</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">📊</div>
+                    <h3>Data Engineering</h3>
+                    <p>Robust ETL pipelines, data validation, snapshot management, and efficient database schema design for scalable applications.</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">🧪</div>
+                    <h3>Comprehensive Testing</h3>
+                    <p>Manual QA testing across emulators, physical devices, and web platforms ensuring consistent performance and user experience.</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">🚀</div>
+                    <h3>Cross-Platform</h3>
+                    <p>Applications built to work seamlessly across iOS, Android, Web, Windows, and other platforms with platform-specific optimizations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Languages & Frameworks</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Dart</span>
+                        <span class="skill-tag">Flutter</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">SQL</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Data & ML</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">Scikit-learn</span>
+                        <span class="skill-tag">Plotly</span>
+                        <span class="skill-tag">Statistical Modeling</span>
+                        <span class="skill-tag">Data Analysis</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Databases & APIs</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">Supabase</span>
+                        <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">ETL Pipelines</span>
+                        <span class="skill-tag">Data Validation</span>
+                        <span class="skill-tag">API Integration</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Practices</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">VSCode</span>
+                        <span class="skill-tag">Error Handling</span>
+                        <span class="skill-tag">Testing</span>
+                        <span class="skill-tag">Documentation</span>
+                        <span class="skill-tag">CI/CD</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">
+                    Hi, I'm <strong>Adrian Marcano</strong>, a full-stack developer and data engineer passionate about creating innovative applications that solve real-world problems. 
+                    My expertise spans mobile app development with Flutter, data analytics with Python, machine learning, and modern web technologies. 
+                    I also have hands-on business experience as a restaurant owner, where I developed and deployed AI automation tools to streamline operations.
+                </p>
+                <p style="margin-bottom: 1.5rem;">
+                    I specialize in building production-ready applications with a focus on user experience, performance, and scalability. 
+                    From concept to deployment, I handle the entire development lifecycle, including UI/UX design, backend development, 
+                    API integration, database architecture, and comprehensive testing.
+                </p>
+                <p style="margin-bottom: 1rem;">
+                    <strong>What I Bring to the Table:</strong>
+                </p>
+                <ul style="margin-bottom: 1.5rem;">
+                    <li><strong>Full-Stack Development:</strong> End-to-end application development from frontend to backend</li>
+                    <li><strong>Mobile Development:</strong> Cross-platform mobile apps with Flutter/Dart</li>
+                    <li><strong>Data Engineering:</strong> ETL pipelines, data processing, and analytics</li>
+                    <li><strong>Machine Learning:</strong> ML model development and integration for predictive analytics</li>
+                    <li><strong>API Integration:</strong> Seamless integration with third-party services and data sources</li>
+                    <li><strong>Production Systems:</strong> Error handling, fallback systems, and scalable architecture</li>
+                </ul>
+                <p style="margin-bottom: 1rem;">
+                    <strong>Key Achievements:</strong>
+                </p>
+                <ul>
+                    <li>Developed <strong>ColorSpark</strong>, a Flutter-based mobile coloring app with AI-generated content and freemium monetization</li>
+                    <li>Built a production-ready <strong>Sports Betting Analytics Platform</strong> with ML-powered predictions and real-time data processing from 20+ sportsbooks</li>
+                    <li>Created and deployed a <strong>Custom GPT for restaurant operations</strong> while owning a Firehouse Subs franchise, automating catering prep workflows and reducing operational errors</li>
+                    <li>Created scalable ETL pipelines with comprehensive error handling and fallback systems</li>
+                    <li>Implemented premium UI/UX designs with custom animations and responsive layouts</li>
+                    <li>Designed and deployed full-stack applications with PostgreSQL, Supabase, and modern APIs</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="contact-description">
+                Interested in collaborating or learning more about my work? Let's connect!
+            </p>
+            <div class="contact-links">
+                <a href="https://github.com/amarcano27" class="contact-link" target="_blank">
+                    💻 GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/adrian-marcano-16a566189/" class="contact-link" target="_blank">
+                    💼 LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Adrian Marcano. Built with ❤️ using modern web technologies.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
