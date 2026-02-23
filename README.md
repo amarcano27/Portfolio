@@ -1,19 +1,35 @@
-# Adrian Marcano – Portfolio
+# Adrian Marcano — Portfolio
 
-This is my personal portfolio website built using HTML, CSS, and JavaScript.  
-It showcases my full-stack development, mobile apps, data analytics, and AI-powered projects.
+Personal portfolio site built with React, Tailwind CSS, and Framer Motion.
 
-## 🚀 Live Demo
+## Live
+
 https://amarcano27.github.io/Portfolio/
 
-## 🛠️ Tech Stack
-- HTML
-- CSS
-- JavaScript
-- GitHub Pages
+## Stack
 
-## 📌 How to Run Locally
+- React 18 (Vite)
+- Tailwind CSS 3
+- Framer Motion
+- React Router
+
+## Run Locally
+
 ```bash
 git clone https://github.com/amarcano27/Portfolio.git
 cd Portfolio
-# open in browser or use a local server
+npm install
+npm run dev
+```
+
+## Build
+
+```bash
+npm run build
+```
+
+Output goes to `dist/`. Deployed automatically via GitHub Actions to GitHub Pages.
+
+## Design
+
+Preset: **Midnight Studio** — dark, cinematic, warm gold accent. Typography uses Inter for body and Playfair Display for display headings. Subtle noise texture overlay as the signature visual motif.
