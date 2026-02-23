@@ -55,8 +55,8 @@ export default function Hero() {
             transition={{ duration: 0.7, ease, delay: 0.5 }}
             className="flex flex-wrap gap-4"
           >
-            <a
-              href="#contact"
+            <button
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="group inline-flex items-center gap-2 text-body font-medium text-bg bg-accent hover:bg-accent-light px-7 py-3.5 rounded-xl transition-all duration-250 hover:shadow-glow"
             >
               Reach Out
@@ -69,13 +69,13 @@ export default function Hero() {
               >
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
-            </a>
-            <a
-              href="#projects"
+            </button>
+            <button
+              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
               className="inline-flex items-center gap-2 text-body font-medium text-text-secondary border border-border hover:border-accent/40 hover:text-text-primary px-7 py-3.5 rounded-xl transition-all duration-250"
             >
               View Projects
-            </a>
+            </button>
           </motion.div>
 
           {/* Credibility line */}

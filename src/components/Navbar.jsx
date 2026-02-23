@@ -2,10 +2,15 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const navLinks = [
-  { label: 'Projects', href: '#projects' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Projects', id: 'projects' },
+  { label: 'Skills', id: 'skills' },
+  { label: 'Contact', id: 'contact' },
 ]
+
+function scrollToId(id) {
+  const el = document.getElementById(id)
+  if (el) el.scrollIntoView({ behavior: 'smooth' })
+}
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -35,31 +40,31 @@ export default function Navbar() {
       }`}
     >
       <div className="section-container flex items-center justify-between h-16 md:h-18">
-        <a
-          href="#top"
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className="text-heading-md font-bold text-text-primary tracking-tight hover:text-accent transition-colors duration-250"
         >
           A<span className="text-accent">.</span>M
-        </a>
+        </button>
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a
+            <button
               key={link.label}
-              href={link.href}
+              onClick={() => scrollToId(link.id)}
               className="text-body-sm text-text-secondary hover:text-text-primary transition-colors duration-250 relative group"
             >
               {link.label}
               <span className="absolute -bottom-1 left-0 w-0 h-px bg-accent transition-all duration-400 ease-smooth group-hover:w-full" />
-            </a>
+            </button>
           ))}
-          <a
-            href="#contact"
+          <button
+            onClick={() => scrollToId('contact')}
             className="text-body-sm font-medium text-bg bg-accent hover:bg-accent-light px-5 py-2 rounded-lg transition-all duration-250 hover:shadow-glow"
           >
             Get in Touch
-          </a>
+          </button>
         </div>
 
         {/* Mobile hamburger */}
@@ -96,22 +101,20 @@ export default function Navbar() {
           >
             <div className="flex flex-col items-center justify-center gap-8 pt-24">
               {navLinks.map((link) => (
-                <a
+                <button
                   key={link.label}
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
+                  onClick={() => { scrollToId(link.id); setMobileOpen(false) }}
                   className="text-display-md font-display text-text-primary hover:text-accent transition-colors"
                 >
                   {link.label}
-                </a>
+                </button>
               ))}
-              <a
-                href="#contact"
-                onClick={() => setMobileOpen(false)}
+              <button
+                onClick={() => { scrollToId('contact'); setMobileOpen(false) }}
                 className="text-body-lg font-medium text-bg bg-accent hover:bg-accent-light px-8 py-3 rounded-lg transition-all duration-250"
               >
                 Get in Touch
-              </a>
+              </button>
             </div>
           </motion.div>
         )}
