@@ -10,7 +10,7 @@ export default function Footer() {
             href="https://github.com/amarcano27"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-body-sm text-text-muted hover:text-text-secondary transition-colors duration-250"
+            className="text-body-sm text-text-muted hover:text-accent transition-colors duration-250"
           >
             GitHub
           </a>
@@ -18,7 +18,7 @@ export default function Footer() {
             href="https://www.linkedin.com/in/adrian-marcano-16a566189/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-body-sm text-text-muted hover:text-text-secondary transition-colors duration-250"
+            className="text-body-sm text-text-muted hover:text-accent transition-colors duration-250"
           >
             LinkedIn
           </a>

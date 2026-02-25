@@ -2,9 +2,9 @@ export const projects = [
   {
     id: 'sports-betting-analytics',
     title: 'Sports Betting Analytics Platform',
-    tagline: 'ML-powered odds aggregation across 20+ sportsbooks',
+    tagline: 'Real-time odds intelligence across 20+ sportsbooks, powered by custom ML models.',
     description:
-      'Full-stack analytics platform that aggregates real-time odds from 20+ sportsbooks, delivers ML-driven player projections, and surfaces expected value edges — built for serious bettors who want data, not hunches.',
+      'A full-stack analytics engine that normalizes live odds from 20+ sportsbooks, runs ML-driven player projections, and flags expected value edges \u2014 built for bettors who want signal, not noise.',
     role: 'Full-Stack Developer',
     type: 'Data Analytics & ML',
     stack: ['Python 3.11', 'Streamlit', 'Supabase', 'PostgreSQL', 'Scikit-learn', 'Pandas', 'NumPy'],
@@ -17,17 +17,17 @@ export const projects = [
       'Multi-sport support: NBA, NFL, MLB, NHL, Esports',
     ],
     problem:
-      'Bettors waste hours cross-referencing odds across dozens of sportsbooks with no systematic way to identify +EV opportunities or factor in player context.',
+      'Bettors waste hours cross-referencing odds across dozens of platforms with no systematic way to identify +EV opportunities or factor in player context like injuries and rest days.',
     approach:
-      'Built a unified data pipeline that normalizes odds from multiple APIs, feeds them into custom ML models for player projections, and surfaces actionable edges through a clean analytics dashboard.',
+      'Built a unified data pipeline that normalizes odds from multiple APIs, feeds them into custom ML models for player projections, and surfaces actionable edges through a clean analytics dashboard. Designed every layer to gracefully degrade when individual data sources go down.',
     results: [
       'Aggregates odds from 20+ sportsbooks in real-time',
-      '5 sport categories with full coverage',
+      '5 sport categories with comprehensive coverage',
       'Custom ML models for player prop projections',
-      'Production-ready with comprehensive error handling and fallback systems',
+      'Production-grade error handling with fallback systems',
     ],
     learned:
-      'Multi-API integration at scale requires robust error handling and fallback logic. Learned to design ETL pipelines that gracefully degrade when individual data sources fail.',
+      'Multi-API integration at scale requires robust error handling and fallback logic. The real value is in normalization, not just collection \u2014 turning messy, inconsistent data into something you can actually reason about.',
     image: '/Portfolio/images/sports-betting/marketplace.png',
     images: [
       '/Portfolio/images/sports-betting/marketplace.png',
@@ -39,9 +39,9 @@ export const projects = [
   {
     id: 'colorspark',
     title: 'ColorSpark',
-    tagline: 'AI-powered coloring app for kids — creativity meets learning',
+    tagline: 'An AI-powered coloring app for kids \u2014 shipped cross-platform with a freemium model.',
     description:
-      'Cross-platform Flutter app that combines AI-generated coloring pages with interactive sticker tools, animated UI, and a freemium subscription model. Designed for children, built with production-grade architecture.',
+      'A cross-platform Flutter app that pairs AI-generated coloring pages with interactive sticker tools and fluid animations. Designed for children, architected for production \u2014 with subscription monetization baked in from day one.',
     role: 'Mobile Developer',
     type: 'Mobile App',
     stack: ['Flutter', 'Dart', 'AI Generation', 'Mobile UI/UX'],
@@ -54,9 +54,9 @@ export const projects = [
       'Cross-platform: iOS, Android, Web',
     ],
     problem:
-      'Kids\' coloring apps are either low-quality or locked behind paywalls with no creative flexibility. Parents want safe, engaging content without ads.',
+      'Kids\u2019 coloring apps are either low-quality ad machines or locked behind steep paywalls. Parents want safe, engaging content without the compromise.',
     approach:
-      'Built a polished Flutter app with AI-generated content, interactive sticker tools, and a freemium model that lets kids explore freely before upgrading. Focused heavily on fluid animations and child-friendly UX.',
+      'Built a polished Flutter app with AI-generated content, interactive sticker tools, and a freemium model that rewards exploration before upselling. Prioritized fluid animations and child-safe UX with oversized touch targets.',
     results: [
       'Cross-platform deployment (iOS, Android, Web)',
       'AI-powered content generation pipeline',
@@ -64,7 +64,7 @@ export const projects = [
       'Manual QA across emulators, physical devices, and web',
     ],
     learned:
-      'Designing for children requires extreme intentionality in touch targets, animation timing, and visual hierarchy. Every interaction needs to feel rewarding.',
+      'Designing for children demands extreme intentionality \u2014 every touch target, animation curve, and color choice carries weight. The best kid-friendly UX feels effortless but requires more precision than most adult interfaces.',
     image: '/Portfolio/images/colorspark/Screenshot 2026-01-06 110841.png',
     images: [
       '/Portfolio/images/colorspark/Screenshot 2026-01-06 110841.png',
@@ -78,9 +78,9 @@ export const projects = [
   {
     id: 'catering-prep-gpt',
     title: 'Catering Prep Assistant GPT',
-    tagline: 'Custom AI that automates restaurant catering operations',
+    tagline: 'A custom AI that replaced manual catering calculations in a live restaurant.',
     description:
-      'A purpose-built GPT that converts ezCater PDF order tickets into execution-ready prep instructions, following Firehouse Subs food service standards. Actively used in daily restaurant operations.',
+      'A purpose-built GPT that converts ezCater PDF order tickets into execution-ready prep instructions, following Firehouse Subs food service standards. Not a demo \u2014 it runs daily in real restaurant operations.',
     role: 'AI Systems Designer',
     type: 'AI Automation',
     stack: ['Custom GPT', 'Prompt Engineering', 'Process Design', 'Business Rules'],
@@ -93,9 +93,9 @@ export const projects = [
       'Strict operational guardrails to prevent errors',
     ],
     problem:
-      'Manual catering prep from PDF tickets is error-prone, slow, and depends on experienced staff interpreting ambiguous orders correctly.',
+      'Manual catering prep from PDF tickets is error-prone, slow, and depends on experienced staff interpreting ambiguous orders correctly every single time.',
     approach:
-      'Translated Firehouse Subs food service standards into structured AI prompts with strict business rules, validation logic, and clear output formatting. Designed to flag ambiguity rather than guess.',
+      'Translated Firehouse Subs food service standards into structured AI prompts with strict business rules, validation logic, and clear output formatting. The system flags ambiguity rather than guessing \u2014 because in food service, guessing costs money.',
     results: [
       'Actively deployed in daily restaurant operations',
       'Reduced prep errors and calculation mistakes',
@@ -103,7 +103,7 @@ export const projects = [
       'Consistent execution regardless of staff experience level',
     ],
     learned:
-      'The best AI tools are ruthlessly specific. Vague prompts produce vague results. Encoding exact business rules, edge cases, and failure modes into the system prompt was the key to real-world reliability.',
+      'The best AI tools are ruthlessly specific. Vague prompts produce vague results. Encoding exact business rules, edge cases, and failure modes into the system prompt was the key to building something people actually rely on.',
     link: 'https://chatgpt.com/g/g-695f354abcdc8191b805e1fe8d43a9d7-catering-prep-gpt',
     featured: true,
   },

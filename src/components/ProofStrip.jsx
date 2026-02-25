@@ -3,7 +3,7 @@ import { StaggerContainer, StaggerItem } from './ScrollReveal'
 
 export default function ProofStrip() {
   return (
-    <section className="py-16 border-y border-border">
+    <section className="py-14 border-y border-border">
       <StaggerContainer className="section-container grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
         {proofPoints.map((point) => (
           <StaggerItem key={point.label} className="text-center md:text-left">

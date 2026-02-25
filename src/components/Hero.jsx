@@ -8,9 +8,10 @@ export default function Hero() {
       id="top"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Spotlight gradient */}
+      {/* Warm spotlight gradient */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-accent/5 rounded-full blur-[120px]" />
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[900px] h-[600px] bg-accent/[0.04] rounded-full blur-[140px]" />
+        <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-accent2/[0.03] rounded-full blur-[120px]" />
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-bg to-transparent" />
       </div>
 
@@ -23,7 +24,7 @@ export default function Hero() {
             transition={{ duration: 0.6, ease, delay: 0.1 }}
             className="text-caption uppercase text-accent tracking-widest mb-6"
           >
-            Full-Stack Developer & Data Engineer
+            Developer & Data Engineer
           </motion.p>
 
           {/* Headline */}
@@ -31,10 +32,10 @@ export default function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease, delay: 0.2 }}
-            className="text-display-lg md:text-display-xl font-display mb-6"
+            className="text-display-lg md:text-display-xl font-display text-text-primary mb-6"
           >
-            I build products that{' '}
-            <span className="italic text-gradient">turn data into decisions</span>
+            Software that turns{' '}
+            <span className="italic text-gradient">raw data into real outcomes</span>
           </motion.h1>
 
           {/* Subheadline */}
@@ -44,8 +45,8 @@ export default function Hero() {
             transition={{ duration: 0.7, ease, delay: 0.35 }}
             className="text-body-lg md:text-heading-lg font-normal text-text-secondary max-w-2xl mb-10 leading-relaxed"
           >
-            From ML-powered analytics platforms to AI-automated restaurant operations
-            — I ship production-grade software that solves real problems.
+            ML analytics platforms. Cross-platform mobile apps. AI tools deployed
+            in live operations. Three production products and counting.
           </motion.p>
 
           {/* CTAs */}
@@ -57,7 +58,7 @@ export default function Hero() {
           >
             <button
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="group inline-flex items-center gap-2 text-body font-medium text-bg bg-accent hover:bg-accent-light px-7 py-3.5 rounded-xl transition-all duration-250 hover:shadow-glow"
+              className="group inline-flex items-center gap-2 text-body font-medium text-white bg-text-primary hover:bg-text-secondary px-7 py-3.5 rounded-xl transition-all duration-250"
             >
               Reach Out
               <svg
@@ -72,9 +73,9 @@ export default function Hero() {
             </button>
             <button
               onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-              className="inline-flex items-center gap-2 text-body font-medium text-text-secondary border border-border hover:border-accent/40 hover:text-text-primary px-7 py-3.5 rounded-xl transition-all duration-250"
+              className="inline-flex items-center gap-2 text-body font-medium text-text-secondary border border-border-light hover:border-accent/40 hover:text-text-primary px-7 py-3.5 rounded-xl transition-all duration-250"
             >
-              View Projects
+              See My Work
             </button>
           </motion.div>
 
