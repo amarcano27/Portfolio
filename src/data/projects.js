@@ -13,14 +13,15 @@ export const projects = [
     timeframe: '2026',
     stack: [
       'TypeScript',
-      'React',
-      'Vinext / Vite',
-      'Tailwind CSS',
+      'React 19',
+      'Next.js 16 (vinext)',
+      'Tailwind CSS 4',
       'Cloudflare Workers',
       'Cloudflare D1 (SQLite)',
       'Drizzle ORM',
       'Zod',
       'Recharts',
+      'Node test runner',
       'SportsGameOdds',
       'The Odds API',
       'Claude Code',
@@ -30,7 +31,7 @@ export const projects = [
       kind: 'stats',
       items: [
         { value: '35', label: 'Sportsbooks' },
-        { value: '27', label: 'API routes' },
+        { value: '29', label: 'API routes' },
         { value: '25', label: 'Database tables' },
         { value: '128', label: 'Test suites' },
       ],
@@ -38,22 +39,23 @@ export const projects = [
     myRole:
       'I served as product owner and directed AI-assisted development using Claude Code and OpenAI Codex. I defined requirements, made product decisions, reviewed implementations, tested functionality, and coordinated cross-review and release workflows.',
     problem:
-      'The same market is priced differently at every sportsbook, and every price carries that book’s margin. Without stripping the margin and comparing across books, it’s hard to tell whether a price is actually good — and without tracking results, hard to tell whether the method works at all.',
+      'The same market is priced differently at every sportsbook, and every price carries that book\u2019s margin. Without stripping the margin and comparing across books, it\u2019s hard to tell whether a price is actually good \u2014 and without tracking results, hard to tell whether the method works at all.',
     approach:
-      'Pull live prices from 35 sportsbooks through a multi-provider data strategy, remove each book’s margin to estimate a fair price, and measure every offered price against it. Every recommendation is recorded, graded automatically against real outcomes, and checked against the closing line.',
+      'Remove each book\u2019s margin (power-method devig), then combine books into one fair probability, weighting sharper books more and judging each book leave-one-out. Prices with positive expected value are screened for stale quotes, thin markets, outliers, and off-market lines, graded A / B / Pass, and ranked into tiers. Every recommendation is recorded before the game and graded afterwards from public box scores.',
     features: [
-      'Live price comparison across 35 sportsbooks',
-      'Margin-free fair price estimation and expected value evaluation',
-      'Recommendation tracking with automated grading against real outcomes',
-      'Closing-line tracking',
-      'Multi-provider data strategy',
-      'Coverage across NFL, college football, MLB, NHL, NBA, and esports',
+      'Top plays opens with a \u201cRight now\u201d answer: up to three graded prices at the user\u2019s books, or the reason there is nothing to bet',
+      'Ranked play cards with tier, price, book, fair chance vs the chance the price needs, EV, stake, and plain-language reasons',
+      'Sport-first navigation across NFL, college football, MLB, NHL, NBA, and esports',
+      'Research pages per sport: NFL matchups vs blitz, MLB pitchers & lineups, NHL shots & goalies, NBA injuries & rest',
+      'Weekly results and a Track record scorecard that compares wins to the priced chance and says \u201ctoo early to judge\u201d below ~100 plays',
+      'Closing-line tracking on every flagged price',
+      'Stale data is labelled, never hidden; every number shows its source and age',
     ],
     results: [
-      '27 API routes and 25 database tables',
-      '128 automated test suites',
-      '6 sport categories covered',
-      'Running track record of recommendations, graded against real outcomes',
+      '~30,000 lines of TypeScript',
+      '29 API routes and 25 database tables',
+      '128 automated test suites; releases gated on typecheck, lint, and all tests passing',
+      'Prices compared across 35 sportsbooks in 6 sport categories',
     ],
     images: [
       {
