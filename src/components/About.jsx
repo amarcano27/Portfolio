@@ -1,4 +1,5 @@
 import ScrollReveal from './ScrollReveal'
+import { education } from '../data/profile'
 
 const focusAreas = ['Applied AI', 'Automation', 'Technical Solutions', 'Implementation', 'Cybersecurity', 'Data']
 
@@ -37,6 +38,19 @@ export default function About() {
               </li>
             ))}
           </ul>
+
+          <div className="mt-12 border-t border-border pt-8">
+            <h3 className="text-caption uppercase tracking-widest text-text-muted mb-6">Education &amp; Certifications</h3>
+            <ul className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              {education.map((item) => (
+                <li key={item.credential}>
+                  <p className="text-body font-medium text-text-primary">{item.credential}</p>
+                  <p className="text-body-sm text-text-secondary">{item.school}</p>
+                  <p className="text-body-sm text-text-muted">{item.detail}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
         </ScrollReveal>
       </div>
     </section>

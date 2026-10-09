@@ -8,6 +8,7 @@ export const projects = [
       'Compares live prices across 35 sportsbooks, estimates margin-free fair prices, evaluates expected value, tracks recommendations, and grades results against real outcomes.',
     role: 'Product Owner / AI-Assisted Developer',
     status: 'Private build',
+    timeframe: '2026',
     // TODO: confirm backend / database names to add here
     stack: ['TypeScript', 'Vite', 'The Odds API', 'Claude Code', 'OpenAI Codex'],
     visual: {
@@ -75,20 +76,24 @@ export const projects = [
     title: 'KEV Automation',
     type: 'Security Automation · Sabel Systems',
     tagline:
-      'A Python-based capability that extends an existing CVE monitoring pipeline with CISA’s Known Exploited Vulnerabilities catalog.',
+      'A Python script that extends an existing CVE monitoring pipeline with CISA’s Known Exploited Vulnerabilities catalog, so the vulnerabilities attackers are actually using rise to the top.',
     role: 'Cyber Center of Excellence Intern',
-    stack: ['Python', 'CISA KEV', 'MITRE CVE', 'Red Hat Enterprise Linux', 'Git'],
+    timeframe: 'June – August 2026',
+    stack: ['Python', 'CISA KEV', 'MITRE CVE', 'NVD', 'Red Hat Enterprise Linux', 'Git'],
     visual: {
       kind: 'list',
-      items: ['MITRE CVE', 'CISA KEV', 'Python', 'RHEL', 'Git'],
+      items: ['MITRE CVE', 'CISA KEV', 'NVD', 'Python', 'RHEL'],
     },
     myRole:
-      'Built the KEV automation capability as an extension of the team’s existing CVE monitoring pipeline, and documented it for the team.',
+      'Built KEV-automation-v1.py during my internship as an extension of the team’s existing CVE monitoring pipeline, running in a Red Hat Enterprise Linux cloud environment.',
+    approach:
+      'Each day, MITRE CVE data is joined with project-specific vendor information and the CISA KEV catalog to identify and prioritize vulnerabilities relevant to monitored systems. A separate, decoupled KEV monitor keeps daily catalog snapshots and flags newly added known-exploited vulnerabilities.',
     features: [
-      'Extends the existing CVE monitoring pipeline',
-      'Works with MITRE CVE data and the CISA KEV catalog',
-      'Runs on Red Hat Enterprise Linux, version-controlled in Git',
-      'Supporting technical documentation',
+      'Daily integration of MITRE CVE data, vendor information, and the CISA KEV catalog',
+      'Prioritizes vulnerabilities relevant to monitored systems',
+      'Daily KEV catalog snapshots to detect newly added entries',
+      'Outputs enhanced with KEV priority tagging and direct NVD references',
+      'Runs in a Red Hat Enterprise Linux cloud environment',
     ],
   },
   {

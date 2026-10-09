@@ -23,7 +23,8 @@ export default function Experience() {
                 <div className="md:col-span-4">
                   <p className="text-caption uppercase tracking-widest text-text-muted mb-2">{job.kind}</p>
                   <h3 className="text-heading-md text-text-primary">{job.company}</h3>
-                  {job.period && <p className="text-body-sm text-text-muted mt-1">{job.period}</p>}
+                  <p className="text-body-sm text-text-muted mt-1">{job.period}</p>
+                  <p className="text-body-sm text-text-muted">{job.location}</p>
                 </div>
                 <div className="md:col-span-8">
                   <p className="font-display italic text-heading-lg text-text-primary mb-3">{job.role}</p>

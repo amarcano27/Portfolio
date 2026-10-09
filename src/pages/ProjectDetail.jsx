@@ -102,6 +102,11 @@ export default function ProjectDetail() {
                   {project.status}
                 </li>
               )}
+              {project.timeframe && (
+                <li className="text-caption text-text-primary bg-bg-elevated border border-border px-3 py-1.5 rounded-md">
+                  {project.timeframe}
+                </li>
+              )}
               {project.stack.map((tech) => (
                 <li key={tech} className="text-caption text-text-muted bg-bg-surface border border-border px-3 py-1.5 rounded-md">
                   {tech}
