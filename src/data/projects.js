@@ -1,70 +1,144 @@
 export const projects = [
   {
-    id: 'sports-betting-analytics',
-    title: 'Sports Betting Analytics Platform',
-    tagline: 'Real-time odds intelligence across 20+ sportsbooks, powered by custom ML models.',
-    description:
-      'A full-stack analytics engine that normalizes live odds from 20+ sportsbooks, runs ML-driven player projections, and flags expected value edges \u2014 built for bettors who want signal, not noise.',
-    role: 'Full-Stack Developer',
-    type: 'Data Analytics & ML',
-    stack: ['Python 3.11', 'Streamlit', 'Supabase', 'PostgreSQL', 'Scikit-learn', 'Pandas', 'NumPy'],
-    apis: ['The Odds API', 'NBA Stats API', 'PandaScore API'],
-    features: [
-      'Real-time odds aggregation from 20+ sportsbooks',
-      'ML-powered player performance projections',
-      'Expected Value (EV) analysis and edge detection',
-      'Context-aware AI insights (injuries, rest days, matchups)',
-      'Multi-sport support: NBA, NFL, MLB, NHL, Esports',
-    ],
+    id: 'apex',
+    tier: 'featured',
+    title: 'APEX',
+    type: 'Sports Analytics Research Platform',
+    tagline:
+      'Compares live prices across 35 sportsbooks, estimates margin-free fair prices, evaluates expected value, tracks recommendations, and grades results against real outcomes.',
+    role: 'Product Owner / AI-Assisted Developer',
+    status: 'Private build',
+    // TODO: confirm backend / database names to add here
+    stack: ['TypeScript', 'Vite', 'The Odds API', 'Claude Code', 'OpenAI Codex'],
+    visual: {
+      kind: 'stats',
+      items: [
+        { value: '35', label: 'Sportsbooks' },
+        { value: '27', label: 'API routes' },
+        { value: '25', label: 'Database tables' },
+        { value: '128', label: 'Test suites' },
+      ],
+    },
+    myRole:
+      'I served as product owner and directed AI-assisted development using Claude Code and OpenAI Codex. I defined requirements, made product decisions, reviewed implementations, tested functionality, and coordinated cross-review and release workflows.',
     problem:
-      'Bettors waste hours cross-referencing odds across dozens of platforms with no systematic way to identify +EV opportunities or factor in player context like injuries and rest days.',
+      'The same market is priced differently at every sportsbook, and every price carries that book’s margin. Without stripping the margin and comparing across books, it’s hard to tell whether a price is actually good — and without tracking results, hard to tell whether the method works at all.',
     approach:
-      'Built a unified data pipeline that normalizes odds from multiple APIs, feeds them into custom ML models for player projections, and surfaces actionable edges through a clean analytics dashboard. Designed every layer to gracefully degrade when individual data sources go down.',
+      'Pull live prices from 35 sportsbooks through a multi-provider data strategy, remove each book’s margin to estimate a fair price, and measure every offered price against it. Every recommendation is recorded, graded automatically against real outcomes, and checked against the closing line.',
+    features: [
+      'Live price comparison across 35 sportsbooks',
+      'Margin-free fair price estimation and expected value evaluation',
+      'Recommendation tracking with automated grading against real outcomes',
+      'Closing-line tracking',
+      'Multi-provider data strategy',
+      'Coverage across NFL, college football, MLB, NHL, NBA, and esports',
+    ],
     results: [
-      'Aggregates odds from 20+ sportsbooks in real-time',
-      '5 sport categories with comprehensive coverage',
-      'Custom ML models for player prop projections',
-      'Production-grade error handling with fallback systems',
+      '27 API routes and 25 database tables',
+      '128 automated test suites',
+      '6 sport categories covered',
+      'Running track record of recommendations, graded against real outcomes',
+    ],
+    note: 'The live app is private: its sports data sources aren’t cleared for public sharing.',
+    // TODO: share the APEX case-study artifact and paste its public link here
+    caseStudyUrl: null,
+    // TODO: link the cleaned public repo once it's pushed
+    github: null,
+  },
+  {
+    id: 'attendly',
+    tier: 'featured',
+    title: 'Attendly',
+    type: 'Current Venture',
+    tagline:
+      'School operations platform focused on attendance, aftercare, billing, reporting, and parent communications.',
+    role: 'Founder & Product Lead',
+    status: 'In progress',
+    stack: ['Product Strategy', 'Implementation', 'Operations'],
+    visual: {
+      kind: 'list',
+      items: ['Attendance', 'Aftercare', 'Billing', 'Reporting', 'Parent communications'],
+    },
+    myRole:
+      'Taking ownership of product direction, implementation, operations, and customer adoption.',
+    features: [
+      'Attendance tracking',
+      'Aftercare management',
+      'Billing',
+      'Reporting',
+      'Parent communications',
+    ],
+  },
+  {
+    id: 'kev-automation',
+    tier: 'featured',
+    title: 'KEV Automation',
+    type: 'Security Automation · Sabel Systems',
+    tagline:
+      'A Python-based capability that extends an existing CVE monitoring pipeline with CISA’s Known Exploited Vulnerabilities catalog.',
+    role: 'Cyber Center of Excellence Intern',
+    stack: ['Python', 'CISA KEV', 'MITRE CVE', 'Red Hat Enterprise Linux', 'Git'],
+    visual: {
+      kind: 'list',
+      items: ['MITRE CVE', 'CISA KEV', 'Python', 'RHEL', 'Git'],
+    },
+    myRole:
+      'Built the KEV automation capability as an extension of the team’s existing CVE monitoring pipeline, and documented it for the team.',
+    features: [
+      'Extends the existing CVE monitoring pipeline',
+      'Works with MITRE CVE data and the CISA KEV catalog',
+      'Runs on Red Hat Enterprise Linux, version-controlled in Git',
+      'Supporting technical documentation',
+    ],
+  },
+  {
+    id: 'catering-prep-gpt',
+    tier: 'additional',
+    title: 'Catering Prep Assistant GPT',
+    type: 'AI Automation',
+    tagline:
+      'A custom GPT that turns catering orders into structured prep instructions using Firehouse Subs business rules.',
+    role: 'Builder',
+    stack: ['Custom GPT', 'Prompt Design', 'Process Design', 'Business Rules'],
+    myRole:
+      'Built a custom GPT that converts catering order information into structured preparation instructions using defined Firehouse Subs business rules and operational guardrails.',
+    problem:
+      'Turning catering PDF tickets into prep work by hand depends on staff reading every order correctly, every time.',
+    approach:
+      'Encoded Firehouse Subs food service standards as explicit rules, validation steps, and a fixed output format. The assistant flags ambiguous orders instead of guessing.',
+    features: [
+      'PDF-based order intake',
+      'Protein, bread, and cheese calculations',
+      'Box lunch logic (Lieutenant vs Rookie standards)',
+      'Prep bag calculations (4 lb / 2 lb standards)',
+      'Beverage yield handling',
+      'Guardrails that flag ambiguity instead of guessing',
     ],
     learned:
-      'Multi-API integration at scale requires robust error handling and fallback logic. The real value is in normalization, not just collection \u2014 turning messy, inconsistent data into something you can actually reason about.',
-    image: '/Portfolio/images/sports-betting/marketplace.png',
-    images: [
-      '/Portfolio/images/sports-betting/marketplace.png',
-      '/Portfolio/images/sports-betting/player_insights.png',
-    ],
-    github: 'https://github.com/amarcano27/sports-betting-dashboard',
-    featured: true,
+      'The best AI tools are ruthlessly specific. Encoding exact business rules, edge cases, and failure modes was what made the output something a team could actually rely on.',
+    link: 'https://chatgpt.com/g/g-695f354abcdc8191b805e1fe8d43a9d7-catering-prep-gpt',
   },
   {
     id: 'colorspark',
+    tier: 'additional',
     title: 'ColorSpark',
-    tagline: 'An AI-powered coloring app for kids \u2014 shipped cross-platform with a freemium model.',
-    description:
-      'A cross-platform Flutter app that pairs AI-generated coloring pages with interactive sticker tools and fluid animations. Designed for children, architected for production \u2014 with subscription monetization baked in from day one.',
-    role: 'Mobile Developer',
     type: 'Mobile App',
+    tagline: 'A Flutter coloring app for kids with AI-generated pages and interactive stickers.',
+    role: 'Developer',
     stack: ['Flutter', 'Dart', 'AI Generation', 'Mobile UI/UX'],
-    features: [
-      'AI-generated coloring pages across multiple categories',
-      'Interactive stickers: drag, resize, rotate',
-      'Animated category selection with custom UI',
-      'Smooth horizontal scroll UX patterns',
-      'Freemium paywall and subscription system',
-      'Cross-platform: iOS, Android, Web',
-    ],
     problem:
-      'Kids\u2019 coloring apps are either low-quality ad machines or locked behind steep paywalls. Parents want safe, engaging content without the compromise.',
+      'Kids’ coloring apps tend to be ad-heavy or locked behind steep paywalls.',
     approach:
-      'Built a polished Flutter app with AI-generated content, interactive sticker tools, and a freemium model that rewards exploration before upselling. Prioritized fluid animations and child-safe UX with oversized touch targets.',
-    results: [
-      'Cross-platform deployment (iOS, Android, Web)',
-      'AI-powered content generation pipeline',
-      'Freemium monetization architecture',
-      'Manual QA across emulators, physical devices, and web',
+      'A Flutter app with AI-generated coloring pages, interactive sticker tools, and a freemium model, designed around large touch targets and simple animated navigation.',
+    features: [
+      'AI-generated coloring pages across categories',
+      'Interactive stickers: drag, resize, rotate',
+      'Animated category selection',
+      'Freemium paywall and subscription flow',
+      'Built for iOS, Android, and Web',
     ],
     learned:
-      'Designing for children demands extreme intentionality \u2014 every touch target, animation curve, and color choice carries weight. The best kid-friendly UX feels effortless but requires more precision than most adult interfaces.',
+      'Designing for children demands extreme intentionality — every touch target, animation curve, and color choice carries weight.',
     image: '/Portfolio/images/colorspark/Screenshot 2026-01-06 110841.png',
     images: [
       '/Portfolio/images/colorspark/Screenshot 2026-01-06 110841.png',
@@ -72,39 +146,5 @@ export const projects = [
       '/Portfolio/images/colorspark/Screenshot 2026-01-06 110956.png',
     ],
     github: 'https://github.com/amarcano27/ColorSpark',
-    detail: '/Portfolio/colorspark.html',
-    featured: true,
-  },
-  {
-    id: 'catering-prep-gpt',
-    title: 'Catering Prep Assistant GPT',
-    tagline: 'A custom AI that replaced manual catering calculations in a live restaurant.',
-    description:
-      'A purpose-built GPT that converts ezCater PDF order tickets into execution-ready prep instructions, following Firehouse Subs food service standards. Not a demo \u2014 it runs daily in real restaurant operations.',
-    role: 'AI Systems Designer',
-    type: 'AI Automation',
-    stack: ['Custom GPT', 'Prompt Engineering', 'Process Design', 'Business Rules'],
-    features: [
-      'PDF-based order intake and parsing',
-      'Exact protein, bread, and cheese calculations',
-      'Box lunch logic (Lieutenant vs Rookie standards)',
-      'Prep bag calculations (4 lb / 2 lb standards)',
-      'Beverage yield handling',
-      'Strict operational guardrails to prevent errors',
-    ],
-    problem:
-      'Manual catering prep from PDF tickets is error-prone, slow, and depends on experienced staff interpreting ambiguous orders correctly every single time.',
-    approach:
-      'Translated Firehouse Subs food service standards into structured AI prompts with strict business rules, validation logic, and clear output formatting. The system flags ambiguity rather than guessing \u2014 because in food service, guessing costs money.',
-    results: [
-      'Actively deployed in daily restaurant operations',
-      'Reduced prep errors and calculation mistakes',
-      'Decreased catering preparation time',
-      'Consistent execution regardless of staff experience level',
-    ],
-    learned:
-      'The best AI tools are ruthlessly specific. Vague prompts produce vague results. Encoding exact business rules, edge cases, and failure modes into the system prompt was the key to building something people actually rely on.',
-    link: 'https://chatgpt.com/g/g-695f354abcdc8191b805e1fe8d43a9d7-catering-prep-gpt',
-    featured: true,
   },
 ]
