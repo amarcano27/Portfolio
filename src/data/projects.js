@@ -9,8 +9,21 @@ export const projects = [
     role: 'Product Owner / AI-Assisted Developer',
     status: 'Private build',
     timeframe: '2026',
-    // TODO: confirm backend / database names to add here
-    stack: ['TypeScript', 'Vite', 'The Odds API', 'Claude Code', 'OpenAI Codex'],
+    stack: [
+      'TypeScript',
+      'React',
+      'Vinext / Vite',
+      'Tailwind CSS',
+      'Cloudflare Workers',
+      'Cloudflare D1 (SQLite)',
+      'Drizzle ORM',
+      'Zod',
+      'Recharts',
+      'SportsGameOdds',
+      'The Odds API',
+      'Claude Code',
+      'OpenAI Codex',
+    ],
     visual: {
       kind: 'stats',
       items: [
