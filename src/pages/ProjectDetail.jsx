@@ -10,11 +10,14 @@ import { ArrowLeft, ArrowRight, External, GitHub, Document } from '../components
 
 const ease = [0.16, 1, 0.3, 1]
 
-function Section({ title, children }) {
+function Section({ n, title, children }) {
   return (
-    <ScrollReveal className="mb-14">
-      <h2 className="text-heading-lg font-display text-text-primary mb-4">{title}</h2>
-      {children}
+    <ScrollReveal className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-10 py-12 border-t border-border">
+      <div className="lg:col-span-3 flex items-baseline gap-4">
+        <span className="font-mono text-label text-accent">{String(n).padStart(2, '0')}</span>
+        <h2 className="font-mono text-label uppercase text-text-primary">{title}</h2>
+      </div>
+      <div className="lg:col-span-9 max-w-3xl">{children}</div>
     </ScrollReveal>
   )
 }
@@ -23,8 +26,8 @@ function Bullets({ items }) {
   return (
     <ul className="space-y-3">
       {items.map((item) => (
-        <li key={item} className="flex items-start gap-3 text-body text-text-secondary">
-          <span aria-hidden="true" className="mt-2.5 w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
+        <li key={item} className="flex gap-4 text-body-lg text-text-secondary">
+          <span aria-hidden="true" className="mt-[0.8em] w-3 h-px bg-accent shrink-0" />
           {item}
         </li>
       ))}
@@ -50,10 +53,8 @@ export default function ProjectDetail() {
         <Navbar />
         <main className="min-h-screen flex items-center justify-center">
           <div className="text-center">
-            <h1 className="text-display-md font-display text-text-primary mb-4">Project not found</h1>
-            <Link to="/" className="text-body text-accent hover:text-accent-light transition-colors">
-              &larr; Back home
-            </Link>
+            <h1 className="text-display-md text-text-primary mb-6">Project not found</h1>
+            <Link to="/" state={{ scrollTo: 'work' }} className="btn-secondary">Back to work</Link>
           </div>
         </main>
         <Footer />
@@ -67,168 +68,151 @@ export default function ProjectDetail() {
     project.github && { label: 'View source', href: project.github, Icon: GitHub },
   ].filter(Boolean)
 
+  const facts = [
+    { k: 'Role', v: project.role },
+    project.timeframe && { k: 'Timeframe', v: project.timeframe },
+    project.status && { k: 'Status', v: project.status },
+  ].filter(Boolean)
+
+  const sections = [
+    project.myRole && { title: 'My Role', body: <p className="text-body-lg text-text-primary">{project.myRole}</p> },
+    project.problem && { title: 'The Problem', body: <p className="text-body-lg text-text-secondary">{project.problem}</p> },
+    project.approach && { title: 'Approach', body: <p className="text-body-lg text-text-secondary">{project.approach}</p> },
+    project.features && { title: 'What It Does', body: <Bullets items={project.features} /> },
+    project.results && { title: 'By the Numbers', body: <Bullets items={project.results} /> },
+    project.images?.length > 1 && {
+      title: 'Gallery',
+      body: (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {project.images.map((img, i) => (
+            <div key={img} className="overflow-hidden rounded-lg border border-border-light">
+              <img src={img} alt={`${project.title} screenshot ${i + 1}`} className="w-full h-auto" loading="lazy" />
+            </div>
+          ))}
+        </div>
+      ),
+    },
+    project.learned && {
+      title: 'What I Learned',
+      body: <p className="text-heading-lg font-medium text-text-primary">&ldquo;{project.learned}&rdquo;</p>,
+    },
+  ].filter(Boolean)
+
   return (
     <>
       <Navbar />
-      <main className="pt-28 pb-16">
-        <article className="section-container max-w-narrow mx-auto">
-          <motion.div initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, ease }}>
-            <Link
-              to="/"
-              state={{ scrollTo: 'work' }}
-              className="inline-flex items-center gap-2 text-body-sm text-text-muted hover:text-accent transition-colors duration-250 mb-12"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              All work
-            </Link>
-          </motion.div>
+      <main>
+        <header className="relative overflow-hidden border-b border-border">
+          <div aria-hidden="true" className="absolute inset-0 hero-grid" />
+          <div aria-hidden="true" className="absolute -bottom-40 right-0 w-[800px] h-[500px] rounded-full bg-[#1B3A6B]/35 blur-[140px]" />
 
-          <motion.header
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease, delay: 0.1 }}
-            className="mb-12"
-          >
-            <p className="text-caption uppercase text-accent tracking-widest mb-4">{project.type}</p>
-            <h1 className="text-display-md md:text-display-lg font-display text-text-primary mb-4">{project.title}</h1>
-            <p className="text-body-lg text-text-secondary">{project.tagline}</p>
+          <div className="section-container relative pt-28 md:pt-36 pb-16">
+            <motion.div initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, ease }}>
+              <Link
+                to="/"
+                state={{ scrollTo: 'work' }}
+                className="inline-flex items-center gap-2 font-mono text-[0.75rem] uppercase tracking-[0.14em] text-text-muted hover:text-accent transition-colors duration-250 mb-12"
+              >
+                <ArrowLeft className="w-3.5 h-3.5" />
+                All work
+              </Link>
+            </motion.div>
 
-            <ul className="flex flex-wrap gap-2 mt-6">
-              <li className="text-caption text-accent bg-accent/10 border border-accent/20 px-3 py-1.5 rounded-md">
-                {project.role}
-              </li>
-              {project.status && (
-                <li className="text-caption text-text-primary bg-bg-elevated border border-border px-3 py-1.5 rounded-md">
-                  {project.status}
-                </li>
-              )}
-              {project.timeframe && (
-                <li className="text-caption text-text-primary bg-bg-elevated border border-border px-3 py-1.5 rounded-md">
-                  {project.timeframe}
-                </li>
-              )}
-              {project.stack.map((tech) => (
-                <li key={tech} className="text-caption text-text-muted bg-bg-surface border border-border px-3 py-1.5 rounded-md">
-                  {tech}
-                </li>
-              ))}
-            </ul>
-          </motion.header>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-end">
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, ease, delay: 0.1 }}
+                className="lg:col-span-8"
+              >
+                <p className="eyebrow-rule mb-6">{project.categories}</p>
+                <h1 className="text-[3rem] md:text-[4.5rem] leading-none tracking-[-0.035em] font-semibold text-text-primary mb-4">
+                  {project.title}
+                </h1>
+                <p className="text-heading-md font-medium text-accent mb-6">{project.type}</p>
+                <p className="text-body-lg md:text-[1.25rem] md:leading-[1.6] text-text-secondary max-w-2xl">{project.tagline}</p>
+              </motion.div>
 
+              <motion.dl
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, ease, delay: 0.25 }}
+                className="lg:col-span-4 border-t border-accent"
+              >
+                {facts.map((f) => (
+                  <div key={f.k} className="grid grid-cols-[100px_1fr] gap-4 py-3 border-b border-border">
+                    <dt className="font-mono text-label uppercase text-text-muted pt-0.5">{f.k}</dt>
+                    <dd className="text-body-sm text-text-primary">{f.v}</dd>
+                  </div>
+                ))}
+              </motion.dl>
+            </div>
+          </div>
+        </header>
+
+        <div className="section-container py-16">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease, delay: 0.2 }}
+            transition={{ duration: 0.7, ease, delay: 0.3 }}
             className="mb-16"
           >
             {project.image ? (
-              <div className="overflow-hidden rounded-xl border border-border shadow-soft">
+              <div className="overflow-hidden rounded-lg border border-border-light shadow-soft max-w-5xl">
                 <img src={project.image} alt={`${project.title} overview`} className="w-full h-auto" />
               </div>
             ) : (
-              <div className="shadow-soft rounded-xl">
+              <div className="shadow-soft max-w-5xl">
                 <ProjectVisual project={project} />
               </div>
             )}
           </motion.div>
 
-          {project.myRole && (
-            <Section title="My Role">
-              <div className="bg-bg-surface border border-border border-l-2 border-l-accent rounded-xl p-6 md:p-8">
-                <p className="text-body-lg text-text-secondary">{project.myRole}</p>
-              </div>
-            </Section>
-          )}
+          <ScrollReveal className="flex flex-wrap gap-2 mb-12">
+            {project.stack.map((tech) => (
+              <span key={tech} className="chip">{tech}</span>
+            ))}
+          </ScrollReveal>
 
-          {project.problem && (
-            <Section title="The Problem">
-              <p className="text-body-lg text-text-secondary">{project.problem}</p>
-            </Section>
-          )}
+          {sections.map((s, i) => (
+            <Section key={s.title} n={i + 1} title={s.title}>{s.body}</Section>
+          ))}
 
-          {project.approach && (
-            <Section title="Approach">
-              <p className="text-body-lg text-text-secondary">{project.approach}</p>
-            </Section>
-          )}
-
-          {project.features && (
-            <Section title="What It Does">
-              <Bullets items={project.features} />
-            </Section>
-          )}
-
-          {project.results && (
-            <Section title="By the Numbers">
-              <div className="bg-bg-surface border border-border rounded-xl p-6 md:p-8">
-                <Bullets items={project.results} />
-              </div>
-            </Section>
-          )}
-
-          {project.images?.length > 1 && (
-            <Section title="Gallery">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {project.images.map((img, i) => (
-                  <div key={img} className="overflow-hidden rounded-xl border border-border shadow-card">
-                    <img src={img} alt={`${project.title} screenshot ${i + 1}`} className="w-full h-auto" loading="lazy" />
+          {(project.note || links.length > 0) && (
+            <ScrollReveal className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 py-12 border-t border-border">
+              <div className="lg:col-start-4 lg:col-span-9">
+                {project.note && <p className="text-body-sm text-text-muted mb-6">{project.note}</p>}
+                {links.length > 0 && (
+                  <div className="flex flex-wrap gap-3">
+                    {links.map(({ label, href, Icon }, i) => (
+                      <a key={label} href={href} target="_blank" rel="noopener noreferrer" className={i === 0 ? 'btn-primary' : 'btn-secondary'}>
+                        <Icon className="w-3.5 h-3.5" />
+                        {label}
+                      </a>
+                    ))}
                   </div>
-                ))}
-              </div>
-            </Section>
-          )}
-
-          {project.learned && (
-            <Section title="What I Learned">
-              <blockquote className="border-l-2 border-accent pl-6">
-                <p className="text-heading-md font-display italic text-text-secondary">{project.learned}</p>
-              </blockquote>
-            </Section>
-          )}
-
-          {project.note && (
-            <ScrollReveal className="mb-14">
-              <p className="text-body-sm text-text-muted">{project.note}</p>
-            </ScrollReveal>
-          )}
-
-          {links.length > 0 && (
-            <ScrollReveal className="mb-16">
-              <div className="flex flex-wrap gap-3">
-                {links.map(({ label, href, Icon }, i) => (
-                  <a
-                    key={label}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={
-                      i === 0
-                        ? 'inline-flex items-center gap-2 text-body font-medium text-bg bg-accent hover:bg-accent-light active:scale-[0.98] px-6 py-3 rounded-xl transition-all duration-250'
-                        : 'inline-flex items-center gap-2 text-body font-medium text-text-secondary border border-border-light hover:border-accent/40 hover:text-text-primary active:scale-[0.98] px-6 py-3 rounded-xl transition-all duration-250'
-                    }
-                  >
-                    <Icon className="w-4 h-4" />
-                    {label}
-                  </a>
-                ))}
+                )}
               </div>
             </ScrollReveal>
           )}
 
           {nextProject.id !== project.id && (
             <ScrollReveal>
-              <div className="border-t border-border pt-12">
-                <p className="text-caption uppercase text-text-muted tracking-widest mb-3">Next</p>
-                <Link to={`/project/${nextProject.id}`} className="group inline-flex items-center gap-3">
-                  <span className="text-heading-lg md:text-display-md font-display text-text-primary group-hover:text-accent transition-colors duration-250">
+              <Link
+                to={`/project/${nextProject.id}`}
+                className="group flex flex-wrap items-end justify-between gap-6 border-t border-accent pt-10 mt-6"
+              >
+                <div>
+                  <p className="font-mono text-label uppercase text-text-muted mb-3">Next project</p>
+                  <p className="text-[2.5rem] md:text-display-lg leading-none tracking-[-0.03em] font-semibold text-text-primary group-hover:text-accent transition-colors duration-250">
                     {nextProject.title}
-                  </span>
-                  <ArrowRight className="w-5 h-5 text-text-muted group-hover:text-accent group-hover:translate-x-1 transition-all duration-250" />
-                </Link>
-              </div>
+                  </p>
+                </div>
+                <ArrowRight className="w-8 h-8 text-text-muted group-hover:text-accent group-hover:translate-x-2 transition-all duration-250" />
+              </Link>
             </ScrollReveal>
           )}
-        </article>
+        </div>
       </main>
       <Footer />
     </>

@@ -2,10 +2,11 @@ import { useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
-import ProofStrip from '../components/ProofStrip'
 import About from '../components/About'
+import Capabilities from '../components/Capabilities'
 import Experience from '../components/Experience'
 import Projects from '../components/Projects'
+import HowIWork from '../components/HowIWork'
 import Skills from '../components/Skills'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
@@ -29,10 +30,11 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <ProofStrip />
         <About />
+        <Capabilities />
         <Experience />
         <Projects />
+        <HowIWork />
         <Skills />
         <Contact />
       </main>

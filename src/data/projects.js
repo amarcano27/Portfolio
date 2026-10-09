@@ -7,6 +7,8 @@ export const projects = [
     tagline:
       'Compares live prices across 35 sportsbooks, estimates margin-free fair prices, evaluates expected value, tracks recommendations, and grades results against real outcomes.',
     role: 'Product Owner / AI-Assisted Developer',
+    categories: 'Data · AI-Assisted Development · Product',
+    focus: ['Product Ownership', 'Requirements', 'AI-Assisted Development', 'Testing & Release'],
     status: 'Private build',
     timeframe: '2026',
     stack: [
@@ -67,6 +69,8 @@ export const projects = [
     tagline:
       'School operations platform focused on attendance, aftercare, billing, reporting, and parent communications.',
     role: 'Founder & Product Lead',
+    categories: 'Product · Operations · Education Technology',
+    focus: ['Product Direction', 'Implementation', 'Operations', 'Customer Adoption'],
     status: 'In progress',
     stack: ['Product Strategy', 'Implementation', 'Operations'],
     visual: {
@@ -91,6 +95,8 @@ export const projects = [
     tagline:
       'A Python script that extends an existing CVE monitoring pipeline with CISA’s Known Exploited Vulnerabilities catalog, so the vulnerabilities attackers are actually using rise to the top.',
     role: 'Cyber Center of Excellence Intern',
+    categories: 'Security · Automation · Python',
+    focus: ['Python Automation', 'Vulnerability Prioritization', 'Data Integration'],
     timeframe: 'June – August 2026',
     stack: ['Python', 'CISA KEV', 'MITRE CVE', 'NVD', 'Red Hat Enterprise Linux', 'Git'],
     visual: {
@@ -117,6 +123,7 @@ export const projects = [
     tagline:
       'A custom GPT that turns catering orders into structured prep instructions using Firehouse Subs business rules.',
     role: 'Builder',
+    categories: 'AI · Operations',
     stack: ['Custom GPT', 'Prompt Design', 'Process Design', 'Business Rules'],
     myRole:
       'Built a custom GPT that converts catering order information into structured preparation instructions using defined Firehouse Subs business rules and operational guardrails.',
@@ -143,6 +150,7 @@ export const projects = [
     type: 'Mobile App',
     tagline: 'A Flutter coloring app for kids with AI-generated pages and interactive stickers.',
     role: 'Developer',
+    categories: 'Mobile · Flutter',
     stack: ['Flutter', 'Dart', 'AI Generation', 'Mobile UI/UX'],
     problem:
       'Kids’ coloring apps tend to be ad-heavy or locked behind steep paywalls.',
