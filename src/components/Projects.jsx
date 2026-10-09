@@ -10,16 +10,15 @@ export default function Projects() {
   const additional = projects.filter((p) => p.tier === 'additional')
 
   return (
-    <section id="work" className="py-24 md:py-32 border-t border-border">
+    <section id="work" className="py-24 md:py-32 border-b border-border">
       <div className="section-container">
         <ScrollReveal>
-          <p className="text-caption uppercase text-accent tracking-widest mb-4">Featured Work</p>
-          <h2 className="text-display-md md:text-display-lg font-display text-text-primary mb-4">
-            Products, ventures &amp; <span className="italic">automation</span>
-          </h2>
-          <p className="text-body-lg text-text-secondary max-w-xl mb-16">
-            What I&rsquo;ve built, what I&rsquo;m building, and the role I played in each.
-          </p>
+          <div className="flex flex-wrap items-end justify-between gap-6 pb-8 mb-20 md:mb-24 border-b border-border">
+            <h2 className="text-display-md md:text-display-lg text-text-primary">Featured Work</h2>
+            <p className="font-mono text-label uppercase text-text-muted">
+              0{featured.length} featured · 0{additional.length} more
+            </p>
+          </div>
         </ScrollReveal>
 
         <motion.div
@@ -27,39 +26,32 @@ export default function Projects() {
           whileInView="visible"
           viewport={{ once: true, margin: '-60px' }}
           variants={{ visible: { transition: { staggerChildren: 0.15 } } }}
-          className="space-y-20 md:space-y-28"
+          className="space-y-28 md:space-y-36"
         >
           {featured.map((project, i) => (
             <ProjectCard key={project.id} project={project} index={i} />
           ))}
         </motion.div>
 
-        <ScrollReveal className="mt-24 md:mt-32 mb-8">
-          <h3 className="text-heading-lg font-display text-text-primary">Additional projects</h3>
+        <ScrollReveal className="mt-28 md:mt-36 mb-6">
+          <h3 className="text-heading-lg text-text-primary">More of my work</h3>
         </ScrollReveal>
 
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6" stagger={0.1}>
+        <StaggerContainer className="border-t border-border" stagger={0.08}>
           {additional.map((project) => (
             <StaggerItem key={project.id}>
               <Link
                 to={`/project/${project.id}`}
-                className="group flex h-full flex-col bg-bg-surface border border-border rounded-xl p-6 md:p-8 hover:-translate-y-1 hover:border-border-light hover:shadow-card-hover active:translate-y-0 transition-all duration-400 ease-smooth"
+                className="group grid grid-cols-[1fr_auto] md:grid-cols-12 items-center gap-4 md:gap-8 py-6 border-b border-border hover:bg-bg-surface/60 transition-colors duration-250 md:px-4 md:-mx-4"
               >
-                <p className="text-caption uppercase tracking-widest text-accent mb-3">{project.type}</p>
-                <h4 className="text-heading-lg font-display text-text-primary mb-2 group-hover:text-accent transition-colors duration-250">
+                <span className="md:col-span-4 text-heading-md font-medium text-text-primary group-hover:text-accent transition-colors duration-250">
                   {project.title}
-                </h4>
-                <p className="text-body text-text-secondary mb-6 flex-1">{project.tagline}</p>
-                <div className="flex items-center justify-between gap-4">
-                  <ul className="flex flex-wrap gap-2">
-                    {project.stack.slice(0, 3).map((tech) => (
-                      <li key={tech} className="text-caption text-text-muted bg-bg border border-border px-2.5 py-1 rounded-md">
-                        {tech}
-                      </li>
-                    ))}
-                  </ul>
-                  <ArrowRight className="w-4 h-4 shrink-0 text-text-muted group-hover:text-accent group-hover:translate-x-1 transition-all duration-250" />
-                </div>
+                </span>
+                <span className="hidden md:block md:col-span-6 text-body-sm text-text-secondary">{project.tagline}</span>
+                <span className="md:col-span-2 flex items-center justify-end gap-3 font-mono text-[0.6875rem] uppercase tracking-wider text-text-muted">
+                  <span className="hidden sm:inline">{project.categories}</span>
+                  <ArrowRight className="w-4 h-4 text-text-muted group-hover:text-accent group-hover:translate-x-1 transition-all duration-250" />
+                </span>
               </Link>
             </StaggerItem>
           ))}

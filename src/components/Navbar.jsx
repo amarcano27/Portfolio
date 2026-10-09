@@ -1,13 +1,12 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useLocation, useNavigate } from 'react-router-dom'
+import { profile } from '../data/profile'
 
 const navLinks = [
-  { label: 'About', id: 'about' },
-  { label: 'Experience', id: 'experience' },
   { label: 'Work', id: 'work' },
-  { label: 'Skills', id: 'skills' },
-  { label: 'Contact', id: 'contact' },
+  { label: 'Experience', id: 'experience' },
+  { label: 'About', id: 'about' },
 ]
 
 export default function Navbar() {
@@ -28,10 +27,10 @@ export default function Navbar() {
   }
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 40)
-    handleScroll()
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
+    const onScroll = () => setScrolled(window.scrollY > 24)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   useEffect(() => {
@@ -41,34 +40,41 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-400 ease-smooth ${
-        scrolled || mobileOpen ? 'bg-bg/90 backdrop-blur-xl border-b border-border' : 'bg-transparent'
+      className={`fixed top-0 inset-x-0 z-40 border-b transition-colors duration-400 ${
+        scrolled || mobileOpen ? 'bg-bg/90 backdrop-blur-xl border-border' : 'bg-transparent border-transparent'
       }`}
     >
-      <div className="section-container flex items-center justify-between h-16 md:h-18">
+      <div className="section-container flex items-center justify-between h-16 md:h-[76px]">
         <button
           onClick={() => goTo('top')}
-          className="text-heading-md font-semibold text-text-primary tracking-tight hover:text-accent transition-colors duration-250"
+          className="group flex items-center gap-3 font-mono text-[0.8125rem] font-bold uppercase tracking-[0.2em] text-text-primary"
         >
-          adrian<span className="text-accent">.</span>
+          <span aria-hidden="true" className="w-2 h-2 bg-accent" />
+          <span className="border-b border-accent pb-0.5 group-hover:text-accent transition-colors duration-250">
+            {profile.name}
+          </span>
         </button>
 
-        <div className="hidden md:flex items-center gap-6 lg:gap-8">
+        <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <button
               key={link.id}
               onClick={() => goTo(link.id)}
-              className="text-body-sm text-text-secondary hover:text-text-primary transition-colors duration-250 relative group"
+              className="text-body-sm font-medium text-text-primary/90 hover:text-accent transition-colors duration-250"
             >
               {link.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-accent transition-all duration-400 ease-smooth group-hover:w-full" />
             </button>
           ))}
-          <button
-            onClick={() => goTo('contact')}
-            className="text-body-sm font-medium text-bg bg-accent hover:bg-accent-light active:scale-[0.98] px-5 py-2 rounded-lg transition-all duration-250"
+          <a
+            href={profile.resume}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-body-sm font-medium text-text-primary/90 hover:text-accent transition-colors duration-250"
           >
-            Let&rsquo;s Connect
+            Resume
+          </a>
+          <button onClick={() => goTo('contact')} className="btn-primary !py-2.5 !px-5">
+            Let&rsquo;s Talk
           </button>
         </div>
 
@@ -78,18 +84,9 @@ export default function Navbar() {
           aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={mobileOpen}
         >
-          <motion.span
-            animate={mobileOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
-            className="block w-5 h-px bg-text-primary origin-center"
-          />
-          <motion.span
-            animate={mobileOpen ? { opacity: 0 } : { opacity: 1 }}
-            className="block w-5 h-px bg-text-primary"
-          />
-          <motion.span
-            animate={mobileOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
-            className="block w-5 h-px bg-text-primary origin-center"
-          />
+          <motion.span animate={mobileOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }} className="block w-5 h-px bg-text-primary origin-center" />
+          <motion.span animate={mobileOpen ? { opacity: 0 } : { opacity: 1 }} className="block w-5 h-px bg-text-primary" />
+          <motion.span animate={mobileOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }} className="block w-5 h-px bg-text-primary origin-center" />
         </button>
       </div>
 
@@ -102,16 +99,29 @@ export default function Navbar() {
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
             className="md:hidden fixed inset-0 top-16 bg-bg z-30"
           >
-            <div className="flex flex-col items-center justify-center gap-6 pt-16">
-              {navLinks.map((link) => (
+            <div className="section-container flex flex-col pt-10">
+              {navLinks.map((link, i) => (
                 <button
                   key={link.id}
                   onClick={() => goTo(link.id)}
-                  className="text-display-md font-display text-text-primary hover:text-accent transition-colors"
+                  className="flex items-baseline gap-4 py-5 border-b border-border text-left text-display-md text-text-primary hover:text-accent transition-colors"
                 >
+                  <span className="font-mono text-label text-accent">0{i + 1}</span>
                   {link.label}
                 </button>
               ))}
+              <a
+                href={profile.resume}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-baseline gap-4 py-5 border-b border-border text-display-md text-text-primary hover:text-accent transition-colors"
+              >
+                <span className="font-mono text-label text-accent">0{navLinks.length + 1}</span>
+                Resume
+              </a>
+              <button onClick={() => goTo('contact')} className="btn-primary mt-10">
+                Let&rsquo;s Talk
+              </button>
             </div>
           </motion.div>
         )}

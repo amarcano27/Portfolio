@@ -26,9 +26,18 @@ export const skillCategories = [
   },
 ]
 
-export const proofPoints = [
-  { eyebrow: 'Professional', title: 'Cyber CoE Intern', detail: 'Security automation at Sabel Systems' },
-  { eyebrow: 'Founder', title: 'Attendly', detail: 'Product direction & operations' },
-  { eyebrow: 'APEX', title: '35 sportsbooks', detail: 'Live market research platform' },
-  { eyebrow: 'Education', title: 'B.A. Computer Science', detail: 'FIU · Cum Laude' },
+export const capabilities = [
+  { area: 'Security', title: 'Vulnerability Automation' },
+  { area: 'AI', title: 'AI-Assisted Development' },
+  { area: 'Product', title: 'Requirements & Decisions' },
+  { area: 'Data', title: 'APIs & Data Workflows' },
+  { area: 'Operations', title: 'Business Ownership' },
+]
+
+export const careerPath = [
+  { label: 'Computer Science', where: 'FIU · Cum Laude' },
+  { label: 'Business Operations', where: 'Firehouse Subs' },
+  { label: 'AI-Assisted Product Development', where: 'APEX' },
+  { label: 'Cybersecurity Automation', where: 'Sabel Systems' },
+  { label: 'Founder & Product Lead', where: 'Attendly' },
 ]

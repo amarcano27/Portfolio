@@ -3,72 +3,90 @@ import { profile } from '../data/profile'
 import { ArrowRight } from './Icons'
 
 const ease = [0.16, 1, 0.3, 1]
-
 const reveal = (delay) => ({
   initial: { opacity: 0, y: 24 },
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.7, ease, delay },
 })
 
-const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+const glance = [
+  { key: 'Now', value: 'Founder & Product Lead', sub: 'Attendly' },
+  { key: 'Recent', value: 'Cyber CoE Intern', sub: 'Sabel Systems · 2026' },
+  { key: 'Building', value: 'APEX', sub: '35 sportsbooks · 27 API routes' },
+  { key: 'Education', value: 'B.A. Computer Science', sub: 'FIU · Cum Laude' },
+]
 
 export default function Hero() {
   return (
-    <section id="top" className="relative min-h-screen flex items-center overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[900px] h-[600px] bg-accent/[0.04] rounded-full blur-[140px]" />
-        <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-accent2/[0.03] rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-bg to-transparent" />
-      </div>
+    <section id="top" className="relative overflow-hidden border-b border-border">
+      <div aria-hidden="true" className="absolute inset-0 hero-grid" />
+      <div aria-hidden="true" className="absolute -bottom-40 right-0 w-[900px] h-[600px] rounded-full bg-[#1B3A6B]/40 blur-[140px]" />
+      <div aria-hidden="true" className="absolute top-10 right-1/4 w-[400px] h-[300px] rounded-full bg-accent/[0.06] blur-[120px]" />
 
-      <div className="section-container relative z-10 pt-28 pb-20 md:pt-0 md:pb-0">
-        <div className="max-w-3xl">
-          <motion.p {...reveal(0.1)} className="text-caption uppercase text-accent tracking-widest mb-6">
+      <div className="section-container relative pt-32 pb-20 md:pt-40 md:pb-28 grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-10 items-center">
+        <div className="lg:col-span-8">
+          <motion.p {...reveal(0.05)} className="eyebrow-rule mb-8">
             {profile.headline}
           </motion.p>
 
           <motion.h1
-            {...reveal(0.2)}
-            className="text-[2.75rem] leading-[1.08] tracking-[-0.02em] sm:text-display-lg md:text-display-xl font-display text-text-primary mb-6"
+            {...reveal(0.15)}
+            className="text-[2.75rem] leading-[1.02] tracking-[-0.035em] font-semibold sm:text-6xl lg:text-display-xl text-text-primary mb-8"
           >
-            Building practical technology around{' '}
-            <span className="italic text-gradient">real business problems</span>
+            I build practical technology around real business problems.
           </motion.h1>
 
-          <motion.p
-            {...reveal(0.35)}
-            className="text-body-lg md:text-[1.25rem] md:leading-[1.6] text-text-secondary max-w-2xl mb-10"
-          >
-            Computer Science graduate with experience across cybersecurity automation,
-            AI-assisted product development, APIs, data, and business operations. I use
-            technology to improve workflows, support decisions, and solve practical problems.
+          <motion.p {...reveal(0.3)} className="text-body-lg md:text-[1.25rem] md:leading-[1.6] text-text-secondary max-w-2xl mb-10">
+            Computer Science graduate working across{' '}
+            <span className="text-accent">cybersecurity automation</span>,{' '}
+            <span className="text-accent">AI-assisted product development</span>, APIs, data, and
+            business operations &mdash; using technology to improve workflows and support better decisions.
           </motion.p>
 
-          <motion.div {...reveal(0.5)} className="flex flex-wrap gap-4">
+          <motion.div {...reveal(0.45)} className="flex flex-wrap gap-3">
             <button
-              onClick={() => scrollTo('contact')}
-              className="group inline-flex items-center gap-2 text-body font-medium text-bg bg-accent hover:bg-accent-light active:scale-[0.98] px-7 py-3.5 rounded-xl transition-all duration-250"
+              onClick={() => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })}
+              className="btn-primary group"
             >
-              Let&rsquo;s Connect
-              <ArrowRight className="w-4 h-4 transition-transform duration-250 group-hover:translate-x-1" />
+              View My Work
+              <ArrowRight className="w-3.5 h-3.5 transition-transform duration-250 group-hover:translate-x-1" />
             </button>
-            <button
-              onClick={() => scrollTo('work')}
-              className="inline-flex items-center gap-2 text-body font-medium text-text-secondary border border-border-light hover:border-accent/40 hover:text-text-primary active:scale-[0.98] px-7 py-3.5 rounded-xl transition-all duration-250"
-            >
-              View Work
-            </button>
+            <a href={profile.resume} target="_blank" rel="noopener noreferrer" className="btn-secondary">
+              View Resume
+            </a>
           </motion.div>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, ease, delay: 0.7 }}
-            className="text-body-sm text-text-muted mt-10"
-          >
-            Python · SQL · APIs · Git · AI-Assisted Development · Automation
-          </motion.p>
         </div>
+
+        <motion.aside
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease, delay: 0.4 }}
+          className="lg:col-span-4 border border-accent/40 bg-bg-surface/70 backdrop-blur-sm rounded-lg"
+          aria-label="At a glance"
+        >
+          <div className="flex items-center justify-between px-6 py-4 border-b border-border">
+            <span className="font-mono text-label uppercase text-text-muted">At a glance</span>
+            <span className="flex items-center gap-2 font-mono text-[0.6875rem] text-accent">
+              <span className="relative flex w-2 h-2">
+                <span className="absolute inset-0 rounded-full bg-accent animate-ping opacity-60" />
+                <span className="relative w-2 h-2 rounded-full bg-accent" />
+              </span>
+              Open to roles
+            </span>
+          </div>
+          <dl>
+            {glance.map((row) => (
+              <div key={row.key} className="grid grid-cols-[88px_1fr] gap-4 px-6 py-4 border-b border-border last:border-b-0">
+                <dt className="font-mono text-label uppercase text-accent pt-1">{row.key}</dt>
+                <dd>
+                  <p className="text-body font-medium text-text-primary">{row.value}</p>
+                  <p className="text-body-sm text-text-muted">{row.sub}</p>
+                </dd>
+              </div>
+            ))}
+          </dl>
+          <p className="px-6 py-3 border-t border-border font-mono text-[0.6875rem] text-text-muted">{profile.location}</p>
+        </motion.aside>
       </div>
     </section>
   )
