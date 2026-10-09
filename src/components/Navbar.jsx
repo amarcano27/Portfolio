@@ -66,7 +66,7 @@ export default function Navbar() {
           ))}
           <button
             onClick={() => goTo('contact')}
-            className="text-body-sm font-medium text-white bg-text-primary hover:bg-text-secondary active:scale-[0.98] px-5 py-2 rounded-lg transition-all duration-250"
+            className="text-body-sm font-medium text-bg bg-accent hover:bg-accent-light active:scale-[0.98] px-5 py-2 rounded-lg transition-all duration-250"
           >
             Let&rsquo;s Connect
           </button>

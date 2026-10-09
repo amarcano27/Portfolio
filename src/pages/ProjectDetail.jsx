@@ -51,7 +51,7 @@ export default function ProjectDetail() {
         <main className="min-h-screen flex items-center justify-center">
           <div className="text-center">
             <h1 className="text-display-md font-display text-text-primary mb-4">Project not found</h1>
-            <Link to="/" className="text-body text-accent hover:text-accent-dark transition-colors">
+            <Link to="/" className="text-body text-accent hover:text-accent-light transition-colors">
               &larr; Back home
             </Link>
           </div>
@@ -198,7 +198,7 @@ export default function ProjectDetail() {
                     rel="noopener noreferrer"
                     className={
                       i === 0
-                        ? 'inline-flex items-center gap-2 text-body font-medium text-white bg-text-primary hover:bg-text-secondary active:scale-[0.98] px-6 py-3 rounded-xl transition-all duration-250'
+                        ? 'inline-flex items-center gap-2 text-body font-medium text-bg bg-accent hover:bg-accent-light active:scale-[0.98] px-6 py-3 rounded-xl transition-all duration-250'
                         : 'inline-flex items-center gap-2 text-body font-medium text-text-secondary border border-border-light hover:border-accent/40 hover:text-text-primary active:scale-[0.98] px-6 py-3 rounded-xl transition-all duration-250'
                     }
                   >

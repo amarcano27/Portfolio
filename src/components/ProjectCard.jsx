@@ -52,7 +52,7 @@ export default function ProjectCard({ project, index }) {
         <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
           <Link
             to={href}
-            className="inline-flex items-center gap-2 text-body-sm font-medium text-accent hover:text-accent-dark transition-colors duration-250 group/link"
+            className="inline-flex items-center gap-2 text-body-sm font-medium text-accent hover:text-accent-light transition-colors duration-250 group/link"
           >
             Read case study
             <span className="sr-only">: {project.title}</span>

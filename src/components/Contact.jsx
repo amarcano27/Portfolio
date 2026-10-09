@@ -3,7 +3,7 @@ import { profile } from '../data/profile'
 import { LinkedIn, GitHub, Mail, Document } from './Icons'
 
 const primary =
-  'inline-flex items-center justify-center gap-3 text-body font-medium text-white bg-text-primary hover:bg-text-secondary active:scale-[0.98] px-7 py-3.5 rounded-xl transition-all duration-250'
+  'inline-flex items-center justify-center gap-3 text-body font-medium text-bg bg-accent hover:bg-accent-light active:scale-[0.98] px-7 py-3.5 rounded-xl transition-all duration-250'
 const secondary =
   'inline-flex items-center justify-center gap-3 text-body font-medium text-text-secondary border border-border-light hover:border-accent/40 hover:text-text-primary active:scale-[0.98] px-7 py-3.5 rounded-xl transition-all duration-250'
 

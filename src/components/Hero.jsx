@@ -47,7 +47,7 @@ export default function Hero() {
           <motion.div {...reveal(0.5)} className="flex flex-wrap gap-4">
             <button
               onClick={() => scrollTo('contact')}
-              className="group inline-flex items-center gap-2 text-body font-medium text-white bg-text-primary hover:bg-text-secondary active:scale-[0.98] px-7 py-3.5 rounded-xl transition-all duration-250"
+              className="group inline-flex items-center gap-2 text-body font-medium text-bg bg-accent hover:bg-accent-light active:scale-[0.98] px-7 py-3.5 rounded-xl transition-all duration-250"
             >
               Let&rsquo;s Connect
               <ArrowRight className="w-4 h-4 transition-transform duration-250 group-hover:translate-x-1" />
