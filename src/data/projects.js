@@ -65,6 +65,7 @@ export const projects = [
       { src: '/Portfolio/images/apex/nhl-shots-goalies.webp', caption: 'NHL Shots & goalies: team rates, goalie starts, top shooters' },
       { src: '/Portfolio/images/apex/nfl-matchups.webp', caption: 'NFL Matchups: receiving vs blitz and no blitz' },
       { src: '/Portfolio/images/apex/nba-injuries-rest.webp', caption: 'NBA Injuries & rest: injury report, rest, and minutes movers' },
+      { src: '/Portfolio/images/apex/track-record.webp', caption: 'Track record: graded results vs fair estimates, with an uncertainty note' },
     ],
     note: 'The live app is private: its sports data sources aren’t cleared for public sharing.',
     // TODO: share the APEX case-study artifact and paste its public link here
