@@ -12,7 +12,7 @@ const reveal = (delay) => ({
 const glance = [
   { key: 'Now', value: 'Founder & Product Lead', sub: 'Attendly' },
   { key: 'Recent', value: 'Cyber CoE Intern', sub: 'Sabel Systems · 2026' },
-  { key: 'Building', value: 'APEX', sub: '35 sportsbooks · 27 API routes' },
+  { key: 'Building', value: 'APEX', sub: '35 sportsbooks · 6 sports' },
   { key: 'Education', value: 'B.A. Computer Science', sub: 'FIU · Cum Laude' },
 ]
 
