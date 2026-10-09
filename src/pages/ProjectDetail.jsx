@@ -166,9 +166,9 @@ export default function ProjectDetail() {
             className="mb-16"
           >
             {project.image ? (
-              <figure className="max-w-5xl">
+              <figure className="w-fit max-w-5xl">
                 <div className="overflow-hidden rounded-lg border border-border-light shadow-soft">
-                  <img src={project.image} alt={project.imageCaption || `${project.title} overview`} className="w-full h-auto" />
+                  <img src={project.image} alt={project.imageCaption || `${project.title} overview`} className="block max-w-full h-auto" />
                 </div>
                 {project.imageCaption && (
                   <figcaption className="mt-3 font-mono text-[0.6875rem] text-text-muted">{project.imageCaption}</figcaption>

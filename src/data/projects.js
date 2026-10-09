@@ -57,15 +57,14 @@ export const projects = [
       '128 automated test suites; releases gated on typecheck, lint, and all tests passing',
       'Prices compared across 35 sportsbooks in 6 sport categories',
     ],
+    image: '/Portfolio/images/apex/top-plays.webp',
+    imageCaption: 'Top plays: the “Right now” answer, then ranked play cards with tier, fair chance vs needed chance, and EV',
     images: [
-      {
-        src: '/Portfolio/images/apex/marketplace-early.webp',
-        caption: 'Earlier version: live player props with edge calculations',
-      },
-      {
-        src: '/Portfolio/images/apex/player-insights-early.webp',
-        caption: 'Earlier version: player hit rates and 20-game trend',
-      },
+      { src: '/Portfolio/images/apex/workspace.webp', caption: 'Research workspace: data freshness, sport switch, and page menu' },
+      { src: '/Portfolio/images/apex/top-plays.webp', caption: 'Top plays: “Right now” answer and ranked play cards' },
+      { src: '/Portfolio/images/apex/nhl-shots-goalies.webp', caption: 'NHL Shots & goalies: team rates, goalie starts, top shooters' },
+      { src: '/Portfolio/images/apex/nfl-matchups.webp', caption: 'NFL Matchups: receiving vs blitz and no blitz' },
+      { src: '/Portfolio/images/apex/nba-injuries-rest.webp', caption: 'NBA Injuries & rest: injury report, rest, and minutes movers' },
     ],
     note: 'The live app is private: its sports data sources aren’t cleared for public sharing.',
     // TODO: share the APEX case-study artifact and paste its public link here
