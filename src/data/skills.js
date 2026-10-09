@@ -1,42 +1,34 @@
 export const skillCategories = [
   {
-    title: 'Languages & Frameworks',
+    title: 'Programming & Data',
     icon: 'code',
-    skills: ['Python', 'Dart', 'Flutter', 'JavaScript', 'HTML/CSS', 'SQL'],
+    skills: ['Python', 'Java', 'JavaScript', 'SQL', 'Bash'],
   },
   {
-    title: 'Data & Machine Learning',
-    icon: 'chart',
-    skills: ['Pandas', 'NumPy', 'Scikit-learn', 'Plotly', 'Statistical Modeling', 'Data Analysis'],
+    title: 'AI & Emerging Technology',
+    icon: 'sparkles',
+    skills: ['AI-Assisted Development', 'Generative AI Tools', 'Prompt Design', 'Claude Code', 'OpenAI Codex'],
   },
   {
-    title: 'Backend & Databases',
-    icon: 'server',
-    skills: ['PostgreSQL', 'Supabase', 'REST APIs', 'ETL Pipelines', 'Data Validation'],
+    title: 'Technical Concepts',
+    icon: 'integration',
+    skills: ['API Development', 'Process Automation', 'Systems Integration', 'Web Development'],
   },
   {
-    title: 'Tools & Practices',
+    title: 'Security',
+    icon: 'shield',
+    skills: ['CVE Analysis', 'Vulnerability Prioritization','CISA KEV Catalog', 'MITRE NVD'],
+  },
+  {
+    title: 'Tools & Platforms',
     icon: 'tool',
-    skills: ['Git', 'VS Code', 'CI/CD', 'Testing', 'Error Handling', 'Documentation'],
+    skills: ['Git', 'Postman', 'AWS', 'Red Hat Enterprise Linux', 'Elastic SIEM', 'Microsoft Office', 'ArcGIS Pro'],
   },
 ]
 
 export const proofPoints = [
-  { metric: '20+', label: 'Sportsbooks', detail: 'Real-time odds pipeline' },
-  { metric: '3', label: 'Production Products', detail: 'Shipped & actively used' },
-  { metric: '5', label: 'Sport Categories', detail: 'NBA \u00b7 NFL \u00b7 MLB \u00b7 NHL \u00b7 Esports' },
-]
-
-export const experience = [
-  {
-    role: 'Freelance Developer & Data Engineer',
-    type: 'Independent',
-    period: 'Present',
-    description: 'Building full-stack analytics platforms, mobile apps, and AI automation tools. Shipping production-grade software that solves real operational problems.',
-    highlights: [
-      'Designed ML-powered odds analytics platform aggregating 20+ sportsbooks',
-      'Built and shipped cross-platform Flutter app with AI content generation',
-      'Created custom GPT actively used in daily restaurant operations',
-    ],
-  },
+  { eyebrow: 'Professional', title: 'Cyber CoE Intern', detail: 'Security automation at Sabel Systems' },
+  { eyebrow: 'Founder', title: 'Attendly', detail: 'Product direction & operations' },
+  { eyebrow: 'APEX', title: '35 sportsbooks', detail: 'Live market research platform' },
+  { eyebrow: 'Education', title: 'B.A. Computer Science', detail: 'FIU · Cum Laude' },
 ]

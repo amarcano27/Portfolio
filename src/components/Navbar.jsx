@@ -1,61 +1,63 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 const navLinks = [
-  { label: 'Work', id: 'projects' },
+  { label: 'About', id: 'about' },
+  { label: 'Experience', id: 'experience' },
+  { label: 'Work', id: 'work' },
   { label: 'Skills', id: 'skills' },
   { label: 'Contact', id: 'contact' },
 ]
-
-function scrollToId(id) {
-  const el = document.getElementById(id)
-  if (el) el.scrollIntoView({ behavior: 'smooth' })
-}
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const location = useLocation()
+  const navigate = useNavigate()
   const isHome = location.pathname === '/'
+
+  const goTo = (id) => {
+    setMobileOpen(false)
+    if (isHome) {
+      if (id === 'top') window.scrollTo({ top: 0, behavior: 'smooth' })
+      else document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      navigate('/', { state: { scrollTo: id } })
+    }
+  }
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40)
+    handleScroll()
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   useEffect(() => {
-    if (mobileOpen) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = ''
-    }
+    document.body.style.overflow = mobileOpen ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
   }, [mobileOpen])
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-400 ease-smooth ${
-        scrolled
-          ? 'bg-bg/90 backdrop-blur-xl border-b border-border'
-          : 'bg-transparent'
+        scrolled || mobileOpen ? 'bg-bg/90 backdrop-blur-xl border-b border-border' : 'bg-transparent'
       }`}
     >
       <div className="section-container flex items-center justify-between h-16 md:h-18">
         <button
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          onClick={() => goTo('top')}
           className="text-heading-md font-semibold text-text-primary tracking-tight hover:text-accent transition-colors duration-250"
         >
           adrian<span className="text-accent">.</span>
         </button>
 
-        {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6 lg:gap-8">
           {navLinks.map((link) => (
             <button
-              key={link.label}
-              onClick={() => scrollToId(link.id)}
+              key={link.id}
+              onClick={() => goTo(link.id)}
               className="text-body-sm text-text-secondary hover:text-text-primary transition-colors duration-250 relative group"
             >
               {link.label}
@@ -63,14 +65,13 @@ export default function Navbar() {
             </button>
           ))}
           <button
-            onClick={() => scrollToId('contact')}
-            className="text-body-sm font-medium text-white bg-text-primary hover:bg-text-secondary px-5 py-2 rounded-lg transition-all duration-250"
+            onClick={() => goTo('contact')}
+            className="text-body-sm font-medium text-bg bg-accent hover:bg-accent-light active:scale-[0.98] px-5 py-2 rounded-lg transition-all duration-250"
           >
-            Get in Touch
+            Let&rsquo;s Connect
           </button>
         </div>
 
-        {/* Mobile hamburger */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className="md:hidden flex flex-col gap-1.5 p-2 -mr-2"
@@ -92,7 +93,6 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -100,24 +100,18 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="md:hidden fixed inset-0 top-16 bg-bg/98 backdrop-blur-xl z-30"
+            className="md:hidden fixed inset-0 top-16 bg-bg z-30"
           >
-            <div className="flex flex-col items-center justify-center gap-8 pt-24">
+            <div className="flex flex-col items-center justify-center gap-6 pt-16">
               {navLinks.map((link) => (
                 <button
-                  key={link.label}
-                  onClick={() => { scrollToId(link.id); setMobileOpen(false) }}
+                  key={link.id}
+                  onClick={() => goTo(link.id)}
                   className="text-display-md font-display text-text-primary hover:text-accent transition-colors"
                 >
                   {link.label}
                 </button>
               ))}
-              <button
-                onClick={() => { scrollToId('contact'); setMobileOpen(false) }}
-                className="text-body-lg font-medium text-white bg-text-primary hover:bg-text-secondary px-8 py-3 rounded-lg transition-all duration-250"
-              >
-                Get in Touch
-              </button>
             </div>
           </motion.div>
         )}

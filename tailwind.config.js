@@ -8,33 +8,30 @@ export default {
     extend: {
       colors: {
         bg: {
-          DEFAULT: '#FAFAF7',
-          surface: '#F3F1EC',
-          elevated: '#EAE7E0',
+          DEFAULT: '#0D0D0D',
+          surface: '#141414',
+          elevated: '#1C1C1C',
         },
         text: {
-          primary: '#1A1612',
-          secondary: '#5C5549',
-          muted: '#8A8279',
+          primary: '#F5F5F5',
+          secondary: '#A3AEBE',
+          muted: '#7D8899',
         },
         border: {
-          DEFAULT: '#E2DED6',
-          light: '#D4CFC5',
+          DEFAULT: '#1F2937',
+          light: '#334155',
         },
         accent: {
-          DEFAULT: '#C4654A',
-          light: '#D07A5E',
-          dark: '#A85340',
-          muted: '#C4654A1A',
+          DEFAULT: '#C9A84C',
+          light: '#D9BE6E',
         },
         accent2: {
-          DEFAULT: '#D4956B',
-          light: '#DFA97F',
+          DEFAULT: '#E0C989',
         },
       },
       fontFamily: {
-        sans: ['Outfit', 'system-ui', '-apple-system', 'sans-serif'],
-        display: ['Cormorant Garamond', 'Georgia', 'serif'],
+        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['Playfair Display', 'Georgia', 'serif'],
       },
       fontSize: {
         'display-xl': ['4.5rem', { lineHeight: '1.05', letterSpacing: '-0.02em', fontWeight: '400' }],
@@ -60,10 +57,10 @@ export default {
         '2xl': '1.75rem',
       },
       boxShadow: {
-        'card': '0 1px 3px rgba(26, 22, 18, 0.04), 0 1px 2px rgba(26, 22, 18, 0.03)',
-        'card-hover': '0 12px 40px rgba(26, 22, 18, 0.08), 0 4px 12px rgba(26, 22, 18, 0.04)',
-        'soft': '0 4px 16px rgba(26, 22, 18, 0.06)',
-        'glow': '0 0 24px rgba(196, 101, 74, 0.12)',
+        'card': '0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2)',
+        'card-hover': '0 16px 48px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(201, 168, 76, 0.08)',
+        'soft': '0 8px 24px rgba(0, 0, 0, 0.35)',
+        'glow': '0 0 30px rgba(201, 168, 76, 0.15)',
       },
       transitionDuration: {
         '250': '250ms',

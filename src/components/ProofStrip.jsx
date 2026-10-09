@@ -3,14 +3,12 @@ import { StaggerContainer, StaggerItem } from './ScrollReveal'
 
 export default function ProofStrip() {
   return (
-    <section className="py-14 border-y border-border">
-      <StaggerContainer className="section-container grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+    <section className="py-12 md:py-14 border-y border-border" aria-label="Highlights">
+      <StaggerContainer className="section-container grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-10 md:gap-12">
         {proofPoints.map((point) => (
-          <StaggerItem key={point.label} className="text-center md:text-left">
-            <p className="text-display-md md:text-display-lg font-display text-accent mb-1">
-              {point.metric}
-            </p>
-            <p className="text-heading-md text-text-primary mb-1">{point.label}</p>
+          <StaggerItem key={point.title}>
+            <p className="text-caption uppercase tracking-widest text-accent mb-2">{point.eyebrow}</p>
+            <p className="text-heading-lg font-display text-text-primary mb-1">{point.title}</p>
             <p className="text-body-sm text-text-muted">{point.detail}</p>
           </StaggerItem>
         ))}
