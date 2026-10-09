@@ -55,6 +55,16 @@ export const projects = [
       '6 sport categories covered',
       'Running track record of recommendations, graded against real outcomes',
     ],
+    images: [
+      {
+        src: '/Portfolio/images/apex/marketplace-early.webp',
+        caption: 'Earlier version: live player props with edge calculations',
+      },
+      {
+        src: '/Portfolio/images/apex/player-insights-early.webp',
+        caption: 'Earlier version: player hit rates and 20-game trend',
+      },
+    ],
     note: 'The live app is private: its sports data sources aren’t cleared for public sharing.',
     // TODO: share the APEX case-study artifact and paste its public link here
     caseStudyUrl: null,
@@ -77,6 +87,7 @@ export const projects = [
       kind: 'list',
       items: ['Attendance', 'Aftercare', 'Billing', 'Reporting', 'Parent communications'],
     },
+    image: '/Portfolio/images/attendly/attendly-hero.webp',
     myRole:
       'Taking ownership of product direction, implementation, operations, and customer adoption.',
     features: [
@@ -103,6 +114,8 @@ export const projects = [
       kind: 'list',
       items: ['MITRE CVE', 'CISA KEV', 'NVD', 'Python', 'RHEL'],
     },
+    image: '/Portfolio/images/kev/vulnerability-operations.webp',
+    imageCaption: 'Vulnerability operations view with KEV flags, priorities, and remediation status (sample data)',
     myRole:
       'Built KEV-automation-v1.py during my internship as an extension of the team’s existing CVE monitoring pipeline, running in a Red Hat Enterprise Linux cloud environment.',
     approach:
@@ -114,34 +127,6 @@ export const projects = [
       'Outputs enhanced with KEV priority tagging and direct NVD references',
       'Runs in a Red Hat Enterprise Linux cloud environment',
     ],
-  },
-  {
-    id: 'catering-prep-gpt',
-    tier: 'additional',
-    title: 'Catering Prep Assistant GPT',
-    type: 'AI Automation',
-    tagline:
-      'A custom GPT that turns catering orders into structured prep instructions using Firehouse Subs business rules.',
-    role: 'Builder',
-    categories: 'AI · Operations',
-    stack: ['Custom GPT', 'Prompt Design', 'Process Design', 'Business Rules'],
-    myRole:
-      'Built a custom GPT that converts catering order information into structured preparation instructions using defined Firehouse Subs business rules and operational guardrails.',
-    problem:
-      'Turning catering PDF tickets into prep work by hand depends on staff reading every order correctly, every time.',
-    approach:
-      'Encoded Firehouse Subs food service standards as explicit rules, validation steps, and a fixed output format. The assistant flags ambiguous orders instead of guessing.',
-    features: [
-      'PDF-based order intake',
-      'Protein, bread, and cheese calculations',
-      'Box lunch logic (Lieutenant vs Rookie standards)',
-      'Prep bag calculations (4 lb / 2 lb standards)',
-      'Beverage yield handling',
-      'Guardrails that flag ambiguity instead of guessing',
-    ],
-    learned:
-      'The best AI tools are ruthlessly specific. Encoding exact business rules, edge cases, and failure modes was what made the output something a team could actually rely on.',
-    link: 'https://chatgpt.com/g/g-695f354abcdc8191b805e1fe8d43a9d7-catering-prep-gpt',
   },
   {
     id: 'colorspark',
@@ -165,11 +150,11 @@ export const projects = [
     ],
     learned:
       'Designing for children demands extreme intentionality — every touch target, animation curve, and color choice carries weight.',
-    image: '/Portfolio/images/colorspark/Screenshot 2026-01-06 110841.png',
+    image: '/Portfolio/images/colorspark/screen-3.webp',
     images: [
-      '/Portfolio/images/colorspark/Screenshot 2026-01-06 110841.png',
-      '/Portfolio/images/colorspark/Screenshot 2026-01-06 110938.png',
-      '/Portfolio/images/colorspark/Screenshot 2026-01-06 110956.png',
+      { src: '/Portfolio/images/colorspark/screen-3.webp', caption: 'Title screen' },
+      { src: '/Portfolio/images/colorspark/screen-1.webp', caption: 'Space coloring page' },
+      { src: '/Portfolio/images/colorspark/screen-2.webp', caption: 'Cooking coloring page' },
     ],
     github: 'https://github.com/amarcano27/ColorSpark',
   },

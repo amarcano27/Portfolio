@@ -80,14 +80,22 @@ export default function ProjectDetail() {
     project.approach && { title: 'Approach', body: <p className="text-body-lg text-text-secondary">{project.approach}</p> },
     project.features && { title: 'What It Does', body: <Bullets items={project.features} /> },
     project.results && { title: 'By the Numbers', body: <Bullets items={project.results} /> },
-    project.images?.length > 1 && {
+    project.images?.length > 0 && {
       title: 'Gallery',
       body: (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {project.images.map((img, i) => (
-            <div key={img} className="overflow-hidden rounded-lg border border-border-light">
-              <img src={img} alt={`${project.title} screenshot ${i + 1}`} className="w-full h-auto" loading="lazy" />
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {project.images.map((img) => (
+            <figure key={img.src}>
+              <a
+                href={img.src}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block overflow-hidden rounded-lg border border-border-light hover:border-accent/60 transition-colors duration-250"
+              >
+                <img src={img.src} alt={`${project.title}: ${img.caption}`} className="w-full h-auto" loading="lazy" />
+              </a>
+              <figcaption className="mt-3 font-mono text-[0.6875rem] text-text-muted">{img.caption}</figcaption>
+            </figure>
           ))}
         </div>
       ),
@@ -158,9 +166,14 @@ export default function ProjectDetail() {
             className="mb-16"
           >
             {project.image ? (
-              <div className="overflow-hidden rounded-lg border border-border-light shadow-soft max-w-5xl">
-                <img src={project.image} alt={`${project.title} overview`} className="w-full h-auto" />
-              </div>
+              <figure className="max-w-5xl">
+                <div className="overflow-hidden rounded-lg border border-border-light shadow-soft">
+                  <img src={project.image} alt={project.imageCaption || `${project.title} overview`} className="w-full h-auto" />
+                </div>
+                {project.imageCaption && (
+                  <figcaption className="mt-3 font-mono text-[0.6875rem] text-text-muted">{project.imageCaption}</figcaption>
+                )}
+              </figure>
             ) : (
               <div className="shadow-soft max-w-5xl">
                 <ProjectVisual project={project} />
